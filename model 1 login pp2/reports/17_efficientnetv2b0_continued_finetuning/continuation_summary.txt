@@ -1,0 +1,69 @@
+================================================================================
+EFFICIENTNETV2B0 CONTINUED FINE-TUNING COMPLETE
+================================================================================
+
+Baseline model        : C:\Users\oshan\Desktop\model 1 login pp2\models\model1_efficientnetv2b0_top_viewport\model1_efficientnetv2b0_selected_best.keras
+Baseline SHA256       : 6be68e8492246210f323b99a89fdc6107d7abfef30db7bb06820b5005497f1af
+Candidate checkpoint  : C:\Users\oshan\Desktop\model 1 login pp2\models\model1_efficientnetv2b0_top_viewport_continuation\continued_finetuning_best.keras
+Candidate SHA256      : d4d112fc24275d1193fa4d87e322ff96a0af0a0bdfea81fd97c1e5f57b0ae0b7
+Fixed threshold       : 0.4660
+Continuation epochs   : 12
+Elapsed time          : 00:06:27
+
+DATA USAGE
+--------------------------------------------------------------------------------
+TRAIN images          : 1992
+VALIDATION images     : 426
+TEST images used     : 0
+
+BASELINE VALIDATION
+--------------------------------------------------------------------------------
+Accuracy              : 0.835681
+Balanced accuracy     : 0.835681
+Precision             : 0.886486
+Recall / sensitivity : 0.769953
+Specificity           : 0.901408
+F1 score              : 0.824121
+MCC                   : 0.677239
+ROC-AUC               : 0.890762
+Average precision     : 0.901832
+TN / FP / FN / TP     : 192 / 21 / 49 / 164
+
+CONTINUED CANDIDATE VALIDATION
+--------------------------------------------------------------------------------
+Accuracy              : 0.835681
+Balanced accuracy     : 0.835681
+Precision             : 0.882353
+Recall / sensitivity : 0.774648
+Specificity           : 0.896714
+F1 score              : 0.825000
+MCC                   : 0.676420
+ROC-AUC               : 0.891622
+Average precision     : 0.902215
+TN / FP / FN / TP     : 191 / 22 / 48 / 165
+
+PREDECLARED SELECTION GATES
+--------------------------------------------------------------------------------
+Minimum AP gain       : 0.001000
+Actual AP gain        : +0.000383
+Accuracy gain         : +0.000000
+MCC gain              : -0.000819
+AP gate passed        : False
+Accuracy gate passed  : True
+MCC gate passed       : False
+
+SELECTION RESULT
+--------------------------------------------------------------------------------
+Result                : BASELINE_RETAINED
+Selected model        : C:\Users\oshan\Desktop\model 1 login pp2\models\model1_efficientnetv2b0_top_viewport\model1_efficientnetv2b0_selected_best.keras
+Selected model SHA256 : 6be68e8492246210f323b99a89fdc6107d7abfef30db7bb06820b5005497f1af
+
+IMPORTANT
+--------------------------------------------------------------------------------
+The Step 15 baseline model was not overwritten.
+The decision threshold was not changed.
+The diagnostic TEST split was not loaded or evaluated.
+No original or prepared screenshot was modified.
+This is one validation-controlled continuation experiment.
+Do not tune again using diagnostic TEST results.
+================================================================================

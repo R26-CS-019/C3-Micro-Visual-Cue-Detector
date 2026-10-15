@@ -1,0 +1,65 @@
+================================================================================
+MODEL 1 ORIGINAL DIMENSIONS AND SOURCES AUDIT COMPLETE
+================================================================================
+
+Manifest             : C:\Users\oshan\Desktop\model 1 login pp2\reports\05_dataset_split\complete_split_manifest.csv
+Manifest SHA256      : 670dc509b5991051682625570c6eef8e2bd23a141294ee0893c650f2f18f23b1
+Original dataset     : C:\Users\oshan\Desktop\new model 1 pp2\dataset
+
+FILE RESOLUTION
+--------------------------------------------------------------------------------
+Manifest images      : 2846
+Successfully inspected: 2846
+Resolution rate      : 1.000000
+File FOUND            : 2846
+Read OK               : 2846
+
+USABLE ORIGINAL IMAGES BY CLASS
+--------------------------------------------------------------------------------
+NOT_MALICIOUS         : 1423
+MALICIOUS             : 1423
+
+TARGET DIMENSION MATCH (384x160)
+--------------------------------------------------------------------------------
+NOT_MALICIOUS - YES: 0
+NOT_MALICIOUS - NO : 1423
+MALICIOUS - YES: 0
+MALICIOUS - NO : 1423
+
+TOP ORIGINAL DIMENSIONS
+--------------------------------------------------------------------------------
+NOT_MALICIOUS:
+  1920x802       : 1423
+MALICIOUS:
+  1920x941       : 1413
+  960x401        : 10
+
+OVERALL FEATURE/CLASS ASSOCIATION
+--------------------------------------------------------------------------------
+aspect_ratio_bucket     : Cramer's V = 0.992997 (VERY_STRONG)
+detected_image_format   : Cramer's V = 0.000000 (VERY_WEAK)
+file_extension          : Cramer's V = 0.000000 (VERY_WEAK)
+filename_pattern        : Cramer's V = 1.000000 (VERY_STRONG)
+image_size_bucket       : Cramer's V = 0.059381 (VERY_WEAK)
+orientation             : Cramer's V = 0.000000 (VERY_WEAK)
+original_dimensions     : Cramer's V = 1.000000 (VERY_STRONG)
+source_folder           : Cramer's V = 1.000000 (VERY_STRONG)
+target_dimension_match  : Cramer's V = 0.000000 (VERY_WEAK)
+viewport_action         : Cramer's V = 0.992997 (VERY_STRONG)
+
+AUDIT RESULT
+--------------------------------------------------------------------------------
+VERY_STRONG_ORIGINAL_GEOMETRY_CLASS_ASSOCIATION_FOUND
+
+INTERPRETATION
+--------------------------------------------------------------------------------
+Source folders and filenames are metadata and are not directly seen by the model.
+However, strong source association shows that the classes came from different collection pipelines.
+Strong image-geometry association can affect cropping, scaling, sharpness and page composition.
+
+IMPORTANT
+--------------------------------------------------------------------------------
+No model training was performed.
+No screenshot was modified.
+No manifest or split was modified.
+================================================================================

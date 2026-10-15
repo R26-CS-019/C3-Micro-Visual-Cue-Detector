@@ -1,0 +1,36 @@
+================================================================================
+PHISH360 NEAR-DUPLICATE AUDIT SUMMARY
+================================================================================
+Audit time: 2026-08-15T07:02:48
+Valid audit images: 10,734
+Successfully hashed images: 10,734
+Hash calculation failures: 0
+
+THRESHOLDS
+--------------------------------------------------------------------------------
+pHash maximum distance: 6
+dHash maximum distance: 10
+
+NEAR-DUPLICATE RESULTS
+--------------------------------------------------------------------------------
+Near-duplicate pairs: 610
+Pairs crossing trainval/test: 45
+Pairs crossing labels: 1
+Near-duplicate groups: 414
+Images inside groups: 932
+Largest group size: 12
+Groups crossing trainval/test: 31
+Groups crossing labels: 1
+
+REPORT FILES
+--------------------------------------------------------------------------------
+C:\Users\oshan\Desktop\new model 2 pp2\reports\phish360_perceptual_hashes.csv
+C:\Users\oshan\Desktop\new model 2 pp2\reports\phish360_near_duplicate_pairs.csv
+C:\Users\oshan\Desktop\new model 2 pp2\reports\phish360_near_duplicate_groups.csv
+C:\Users\oshan\Desktop\new model 2 pp2\reports\phish360_perceptual_hash_failures.csv
+
+IMPORTANT
+--------------------------------------------------------------------------------
+Near-duplicate results are warnings and must be reviewed before exclusions are made.
+No screenshots or original dataset files were deleted, moved, renamed, resized or modified.
+================================================================================

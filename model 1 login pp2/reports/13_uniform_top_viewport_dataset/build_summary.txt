@@ -1,0 +1,51 @@
+================================================================================
+UNIFORM TOP-VIEWPORT DATASET CREATION COMPLETE
+================================================================================
+
+Original dataset      : C:\Users\oshan\Desktop\new model 1 pp2\dataset
+Source manifest       : C:\Users\oshan\Desktop\model 1 login pp2\reports\05_dataset_split\complete_split_manifest.csv
+Source manifest SHA256: 670dc509b5991051682625570c6eef8e2bd23a141294ee0893c650f2f18f23b1
+New dataset           : C:\Users\oshan\Desktop\model 1 login pp2\data\prepared_login_uniform_top_viewport_384x160
+New manifest          : C:\Users\oshan\Desktop\model 1 login pp2\reports\13_uniform_top_viewport_dataset\complete_uniform_top_viewport_manifest.csv
+New manifest SHA256   : c83a0c78069b61d24c0362d79d253394fc425a5ed21dd48b1084625278381ab9
+
+PROCESSING
+--------------------------------------------------------------------------------
+Action                : UNIFORM_WIDTH_SCALE_TOP_VIEWPORT
+Target dimensions     : 384x160
+Aspect ratio          : PRESERVED DURING RESIZE
+Resize rule           : WIDTH -> 384
+Viewport rule         : TOP 160 PIXELS
+Colour mode           : RGB
+Output format         : PNG
+Interpolation         : LANCZOS
+Same algorithm/classes: YES
+
+DATASET COUNTS
+--------------------------------------------------------------------------------
+Total images          : 2846
+NOT_MALICIOUS         : 1423
+MALICIOUS             : 1423
+
+TRAIN                 : 1992
+VALIDATION            : 426
+TEST diagnostic only  : 428
+
+PIXELS REMOVED BELOW TOP VIEWPORT
+--------------------------------------------------------------------------------
+MALICIOUS       |   0 pixels : 10
+MALICIOUS       |  28 pixels : 1413
+NOT_MALICIOUS   |   0 pixels : 1423
+
+IMPORTANT
+--------------------------------------------------------------------------------
+Both classes used exactly the same algorithm.
+No image was directly stretched to 384x160.
+Original aspect ratios were preserved during resizing.
+Original screenshots were not modified.
+Existing prepared datasets were not modified.
+Existing split assignments were preserved.
+The existing TEST split is diagnostic only because it was inspected.
+A separate external dataset is required for final evaluation.
+Audit and visually review this dataset before training.
+================================================================================

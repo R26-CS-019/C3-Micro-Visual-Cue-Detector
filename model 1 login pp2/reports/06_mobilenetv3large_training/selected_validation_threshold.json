@@ -1,0 +1,23 @@
+{
+  "selected_checkpoint": "PHASE_2_FINETUNED",
+  "selected_threshold": 0.19,
+  "selection_rule": "Maximum MCC among thresholds with validation recall >= 0.90",
+  "validation_metrics": {
+    "threshold": 0.19,
+    "accuracy": 0.7910798122065728,
+    "precision": 0.7384615384615385,
+    "recall": 0.9014084507042254,
+    "specificity": 0.6807511737089202,
+    "f1": 0.8118393234672304,
+    "mcc": 0.5968716716350096,
+    "fpr": 0.3192488262910798,
+    "fnr": 0.09859154929577464,
+    "tn": 145,
+    "fp": 68,
+    "fn": 21,
+    "tp": 192
+  },
+  "validation_roc_auc": 0.9188212215389362,
+  "validation_average_precision": 0.9357412203216378,
+  "test_data_used": false
+}

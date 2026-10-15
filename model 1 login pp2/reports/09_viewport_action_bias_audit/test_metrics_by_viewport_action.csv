@@ -1,0 +1,4 @@
+﻿viewport_action,total_images,true_negatives,false_positives,false_negatives,true_positives,accuracy,specificity,recall,false_positive_rate,false_negative_rate
+OVERALL,428,126,88,20,194,0.747664,0.588785,0.906542,0.411215,0.093458
+NONE,215,126,88,1,0,0.586047,0.588785,0.000000,0.411215,1.000000
+TOP_CROP,213,0,0,19,194,0.910798,0.000000,0.910798,0.000000,0.089202

@@ -1,0 +1,73 @@
+================================================================================
+MODEL 2 VALIDATION THRESHOLD SELECTION SUMMARY
+================================================================================
+
+Validation images: 1,216
+Validation LEGITIMATE: 608
+Validation PHISHING: 608
+Fixed test images used: 0
+
+DEFAULT THRESHOLD RESULTS
+--------------------------------------------------------------------------------
+Threshold         : 0.500
+Accuracy          : 0.900493
+Precision         : 0.909244
+Recall            : 0.889803
+Specificity       : 0.911184
+F1-score          : 0.899418
+Balanced accuracy  : 0.900493
+Confusion matrix   : TN=554, FP=54, FN=67, TP=541
+
+SELECTED MAXIMUM-F1 THRESHOLD
+--------------------------------------------------------------------------------
+Threshold         : 0.392
+Accuracy          : 0.905428
+Precision         : 0.894400
+Recall            : 0.919408
+Specificity       : 0.891447
+F1-score          : 0.906732
+Balanced accuracy  : 0.905428
+Confusion matrix   : TN=542, FP=66, FN=49, TP=559
+
+BEST BALANCED-ACCURACY CANDIDATE
+--------------------------------------------------------------------------------
+Threshold         : 0.618
+Accuracy          : 0.908717
+Precision         : 0.944544
+Recall            : 0.868421
+Specificity       : 0.949013
+F1-score          : 0.904884
+Balanced accuracy  : 0.908717
+Confusion matrix   : TN=577, FP=31, FN=80, TP=528
+
+BEST PRECISION WITH RECALL >= 90%
+--------------------------------------------------------------------------------
+Threshold         : 0.469
+Accuracy          : 0.904605
+Precision         : 0.907285
+Recall            : 0.901316
+Specificity       : 0.907895
+F1-score          : 0.904290
+Balanced accuracy  : 0.904605
+Confusion matrix   : TN=552, FP=56, FN=60, TP=548
+
+LOCKED MODEL AND THRESHOLD
+--------------------------------------------------------------------------------
+Model: C:\Users\oshan\Desktop\new model 2 pp2\models\model2_effnetv2b0\stage2\model2_effnetv2b0_stage2_best.keras
+Threshold: 0.392
+Selection rule: maximum validation F1-score
+
+REPORT FILES
+--------------------------------------------------------------------------------
+C:\Users\oshan\Desktop\new model 2 pp2\reports\model2_effnetv2b0\threshold_selection\validation_threshold_metrics.csv
+C:\Users\oshan\Desktop\new model 2 pp2\reports\model2_effnetv2b0\threshold_selection\validation_predictions.csv
+C:\Users\oshan\Desktop\new model 2 pp2\reports\model2_effnetv2b0\threshold_selection\selected_threshold.json
+C:\Users\oshan\Desktop\new model 2 pp2\reports\model2_effnetv2b0\threshold_selection\validation_threshold_curves.png
+C:\Users\oshan\Desktop\new model 2 pp2\reports\model2_effnetv2b0\threshold_selection\validation_confusion_matrix_selected_threshold.png
+C:\Users\oshan\Desktop\new model 2 pp2\reports\model2_effnetv2b0\threshold_selection\validation_threshold_summary.txt
+
+IMPORTANT
+--------------------------------------------------------------------------------
+The fixed test set was not loaded or evaluated.
+Do not change the threshold after viewing test results.
+================================================================================

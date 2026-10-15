@@ -1,0 +1,60 @@
+================================================================================
+PHISH-IRIS EXTERNAL DATASET AUDIT SUMMARY
+================================================================================
+
+Dataset root: C:\Users\oshan\Desktop\new model 2 pp2\external dataset\tk4fkswtj5-1
+
+IMAGE VALIDATION
+--------------------------------------------------------------------------------
+Images processed: 2,849
+Valid images: 2,849
+Invalid images: 0
+
+BINARY LABEL COUNTS
+--------------------------------------------------------------------------------
+LEGITIMATE: 1,397
+PHISHING  : 1,452
+
+SOURCE SPLIT COUNTS
+--------------------------------------------------------------------------------
+TRAIN: 1,312
+VAL: 1,537
+
+ORIGINAL CLASS COUNTS
+--------------------------------------------------------------------------------
+adobe: 70
+alibaba: 76
+amazon: 29
+apple: 64
+boa: 116
+chase: 111
+dhl: 109
+dropbox: 115
+facebook: 144
+linkedin: 38
+microsoft: 118
+other: 1,397
+paypal: 214
+wellsfargo: 134
+yahoo: 114
+
+INTERNAL EXACT DUPLICATES
+--------------------------------------------------------------------------------
+Unique SHA-256 values: 2,449
+Exact duplicate groups: 320
+Images inside duplicate groups: 720
+Cross-label duplicate groups: 0
+
+REPORT FILES
+--------------------------------------------------------------------------------
+C:\Users\oshan\Desktop\new model 2 pp2\reports\model2_effnetv2b0\external_evaluation\phish_iris\phish_iris_external_manifest.csv
+C:\Users\oshan\Desktop\new model 2 pp2\reports\model2_effnetv2b0\external_evaluation\phish_iris\phish_iris_invalid_images.csv
+C:\Users\oshan\Desktop\new model 2 pp2\reports\model2_effnetv2b0\external_evaluation\phish_iris\phish_iris_exact_duplicates.csv
+C:\Users\oshan\Desktop\new model 2 pp2\reports\model2_effnetv2b0\external_evaluation\phish_iris\phish_iris_audit_summary.txt
+
+IMPORTANT
+--------------------------------------------------------------------------------
+No model training was performed.
+No screenshot was modified.
+The fixed Phish360 test set was not used.
+================================================================================

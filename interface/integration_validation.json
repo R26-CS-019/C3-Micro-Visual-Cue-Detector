@@ -1,0 +1,25 @@
+{
+  "checks": [
+    "invalid URL rejected",
+    "cross-origin submission rejected",
+    "invalid host rejected",
+    "path traversal rejected",
+    "URL /login routed to Model 1",
+    "Model 1 score matches original component",
+    "Model 1 both Grad-CAM forward paths match inference",
+    "Model 1 screenshot and all evidence tabs display",
+    "Model 1 CSV download works",
+    "URL /article routed to Model 2",
+    "Model 2 score matches original component",
+    "Model 2 both Grad-CAM forward paths match inference",
+    "Model 2 screenshot and all evidence tabs display",
+    "Model 2 CSV download works",
+    "mobile page has no horizontal overflow",
+    "no browser JavaScript errors"
+  ],
+  "test_scope": "Local synthetic-page integration checks, not accuracy evaluation",
+  "runs": [
+    "a600fb725ab24f4882b848cf4a5f14a6",
+    "b6632d7785334090853cb6c0d70a4e87"
+  ]
+}

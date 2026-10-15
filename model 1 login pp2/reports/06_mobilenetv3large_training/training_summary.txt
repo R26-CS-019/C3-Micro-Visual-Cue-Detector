@@ -1,0 +1,31 @@
+================================================================================
+MODEL 1 MOBILENETV3LARGE TRAINING COMPLETE
+================================================================================
+
+Selected checkpoint : PHASE_2_FINETUNED
+Selected model      : C:\Users\oshan\Desktop\model 1 login pp2\models\model1_mobilenetv3large\model1_selected_best.keras
+Decision threshold  : 0.1900
+
+VALIDATION RESULTS
+--------------------------------------------------------------------------------
+Accuracy            : 0.791080
+Precision           : 0.738462
+Recall              : 0.901408
+Specificity         : 0.680751
+F1                  : 0.811839
+MCC                 : 0.596872
+ROC-AUC             : 0.918821
+Average precision   : 0.935741
+
+CONFUSION MATRIX
+--------------------------------------------------------------------------------
+TN: 145
+FP: 68
+FN: 21
+TP: 192
+
+Training time       : 831.59 seconds
+
+TEST DATA WAS NOT USED.
+The next script will evaluate the locked model and threshold on the untouched test set.
+================================================================================

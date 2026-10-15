@@ -1,0 +1,22 @@
+MODEL 2 STAGE 2 TRAINABLE BACKBONE LAYERS
+======================================================================
+Backbone: efficientnetv2-b0
+Requested final backbone layers: 40
+Trainable weighted backbone layers: 14
+Total model parameters: 5,920,593
+Trainable parameters: 1,709,073
+
+block6f_se_reduce
+block6f_se_expand
+block6f_project_conv
+block6g_expand_conv
+block6g_dwconv2
+block6g_se_reduce
+block6g_se_expand
+block6g_project_conv
+block6h_expand_conv
+block6h_dwconv2
+block6h_se_reduce
+block6h_se_expand
+block6h_project_conv
+top_conv

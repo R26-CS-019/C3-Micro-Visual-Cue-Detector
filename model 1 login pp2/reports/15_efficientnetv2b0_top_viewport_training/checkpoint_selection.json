@@ -1,0 +1,47 @@
+{
+    "selection_data": "VALIDATION_ONLY",
+    "primary_selection_metric": "average_precision_pr_auc",
+    "tie_breakers": [
+        "roc_auc",
+        "lower_binary_log_loss",
+        "lower_brier_score"
+    ],
+    "phase_1": {
+        "checkpoint": "C:\\Users\\oshan\\Desktop\\model 1 login pp2\\models\\model1_efficientnetv2b0_top_viewport\\phase1_frozen_best.keras",
+        "metrics": {
+            "average_precision_pr_auc": 0.8854374357653286,
+            "roc_auc": 0.8781767286032313,
+            "binary_log_loss": 0.4657060493053222,
+            "brier_score": 0.14898221201717002,
+            "accuracy_at_0_5": 0.8098591549295775,
+            "f1_at_0_5": 0.7862796833773087,
+            "mcc_at_0_5": 0.6353795214179134
+        }
+    },
+    "phase_2": {
+        "checkpoint": "C:\\Users\\oshan\\Desktop\\model 1 login pp2\\models\\model1_efficientnetv2b0_top_viewport\\phase2_finetuned_best.keras",
+        "metrics": {
+            "average_precision_pr_auc": 0.901832161487373,
+            "roc_auc": 0.8907624148647755,
+            "binary_log_loss": 0.4291055041059477,
+            "brier_score": 0.13397811661151027,
+            "accuracy_at_0_5": 0.8286384976525821,
+            "f1_at_0_5": 0.8142493638676844,
+            "mcc_at_0_5": 0.6653102732642345
+        }
+    },
+    "selected_phase": "PHASE_2_FINETUNED",
+    "selected_source_path": "C:\\Users\\oshan\\Desktop\\model 1 login pp2\\models\\model1_efficientnetv2b0_top_viewport\\phase2_finetuned_best.keras",
+    "selected_model_path": "C:\\Users\\oshan\\Desktop\\model 1 login pp2\\models\\model1_efficientnetv2b0_top_viewport\\model1_efficientnetv2b0_selected_best.keras",
+    "selected_model_sha256": "6be68e8492246210f323b99a89fdc6107d7abfef30db7bb06820b5005497f1af",
+    "selected_checkpoint_metrics": {
+        "average_precision_pr_auc": 0.901832161487373,
+        "roc_auc": 0.8907624148647755,
+        "binary_log_loss": 0.4291055041059477,
+        "brier_score": 0.13397811661151027,
+        "accuracy_at_0_5": 0.8286384976525821,
+        "f1_at_0_5": 0.8142493638676844,
+        "mcc_at_0_5": 0.6653102732642345
+    },
+    "diagnostic_test_used": false
+}

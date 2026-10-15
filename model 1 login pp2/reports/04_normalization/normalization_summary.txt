@@ -1,0 +1,29 @@
+================================================================================
+MODEL 1 NORMALIZATION SUMMARY
+================================================================================
+
+Original images                : 2846
+Final output size               : 384x160
+Prepared dataset                : C:\Users\oshan\Desktop\model 1 login pp2\data\prepared_login_384x160
+
+CLASS COUNTS
+--------------------------------------------------------------------------------
+MALICIOUS                      : 1423
+NOT_MALICIOUS                  : 1423
+
+VIEWPORT ACTIONS
+--------------------------------------------------------------------------------
+Top cropped                    : 1413
+Bottom padded                  : 0
+No viewport change             : 1433
+
+POST-NORMALIZATION DUPLICATES
+--------------------------------------------------------------------------------
+Exact duplicate groups         : 0
+Cross-class duplicate groups   : 0
+
+IMPORTANT:
+All output images are newly created normalized copies.
+No original screenshot was modified, moved, renamed,
+resized, or deleted.
+================================================================================

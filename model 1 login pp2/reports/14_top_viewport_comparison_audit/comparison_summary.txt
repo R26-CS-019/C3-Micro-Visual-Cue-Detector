@@ -1,0 +1,70 @@
+================================================================================
+TOP-VIEWPORT DATASET AUDIT AND COMPARISON COMPLETE
+================================================================================
+
+Old dataset          : C:\Users\oshan\Desktop\model 1 login pp2\data\prepared_login_384x160
+New dataset          : C:\Users\oshan\Desktop\model 1 login pp2\data\prepared_login_uniform_top_viewport_384x160
+New manifest         : C:\Users\oshan\Desktop\model 1 login pp2\reports\13_uniform_top_viewport_dataset\complete_uniform_top_viewport_manifest.csv
+Manifest SHA256      : c83a0c78069b61d24c0362d79d253394fc425a5ed21dd48b1084625278381ab9
+
+FILE AND HASH VALIDATION
+--------------------------------------------------------------------------------
+Manifest images      : 2846
+Successfully compared: 2846
+Validation passed    : 2846
+Validation failed    : 0
+Manifest hash matches: 2846
+
+OLD VS NEW COMPARISON
+--------------------------------------------------------------------------------
+File SHA identical   : 0
+Pixel identical      : 0
+PIXEL_IDENTICAL       : 0 (0.000000)
+NEAR_IDENTICAL        : 25 (0.008784)
+HIGHLY_SIMILAR        : 1508 (0.529866)
+MODERATELY_SIMILAR    : 1251 (0.439564)
+VISUALLY_DIFFERENT    : 62 (0.021785)
+Pixel/near/high total : 1533 (0.538651)
+
+EXACT DUPLICATE AUDIT - NEW DATASET
+--------------------------------------------------------------------------------
+Duplicate groups     : 0
+Cross-split groups   : 0
+Cross-class groups   : 0
+
+CLASS COMPARISON
+--------------------------------------------------------------------------------
+NOT_MALICIOUS:
+  Compared           : 1423
+  Mean normalized MAE: 0.01575351
+  Maximum norm. MAE  : 0.06867302
+  Mean pHash distance: 2.452565
+  Mean dHash distance: 1.345748
+
+MALICIOUS:
+  Compared           : 1423
+  Mean normalized MAE: 0.01298815
+  Maximum norm. MAE  : 0.13985847
+  Mean pHash distance: 2.671820
+  Mean dHash distance: 1.101195
+
+AUDIT RESULT
+--------------------------------------------------------------------------------
+NEW_DATASET_MEANINGFULLY_DIFFERS_VISUAL_REVIEW_REQUIRED
+
+INTERPRETATION
+--------------------------------------------------------------------------------
+Pixel equality tests whether displayed RGB values are identical.
+File SHA equality is stricter and also depends on PNG encoding.
+pHash and dHash estimate perceptual visual similarity.
+A highly similar result means changing the model architecture alone
+does not prove that the preprocessing/source confound was corrected.
+Inspect both review sheets before deciding whether to retrain.
+
+IMPORTANT
+--------------------------------------------------------------------------------
+No screenshot or manifest was modified.
+No model training was performed.
+The previous TEST split remains diagnostic only.
+A separate external dataset is required for final evaluation.
+================================================================================

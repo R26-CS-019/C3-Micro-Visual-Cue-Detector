@@ -1,0 +1,48 @@
+================================================================================
+MODEL 1 LOGIN DATASET AUDIT SUMMARY
+================================================================================
+
+Dataset path                    : C:\Users\oshan\Desktop\Research project\datasets\dataset\login dataset
+Total discovered images         : 2846
+Valid images                    : 2846
+Invalid/corrupt images           : 0
+Images requiring visual review  : 564
+
+CLASS COUNTS
+--------------------------------------------------------------------------------
+MALICIOUS                     : 1423 total, 1423 valid
+NOT_MALICIOUS                 : 1423 total, 1423 valid
+
+EXACT DUPLICATES
+--------------------------------------------------------------------------------
+Exact duplicate groups          : 0
+Extra duplicate images          : 0
+Cross-class duplicate groups    : 0
+
+FILE EXTENSIONS
+--------------------------------------------------------------------------------
+.png                          : 2846
+
+REVIEW REASONS
+--------------------------------------------------------------------------------
+MOSTLY_WHITE                  : 495
+LOW_ENTROPY                   : 372
+LOW_PIXEL_VARIATION           : 3
+MOSTLY_BLACK                  : 1
+
+MOST COMMON IMAGE DIMENSIONS
+--------------------------------------------------------------------------------
+1920x802                      : 1423
+1920x941                      : 1412
+960x401                       : 10
+1148x560                      : 1
+
+================================================================================
+IMPORTANT
+================================================================================
+This audit did not delete, rename, resize, move, or modify
+any original screenshot.
+
+Near-duplicate detection is not included in this first audit.
+It will be performed after reviewing this report.
+================================================================================

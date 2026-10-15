@@ -1,0 +1,74 @@
+{
+    "script": "15_train_efficientnetv2b0_top_viewport.py",
+    "tensorflow_version": "2.21.0",
+    "model_architecture": "EfficientNetV2B0",
+    "weights": "imagenet",
+    "include_preprocessing": true,
+    "input_shape": [
+        160,
+        384,
+        3
+    ],
+    "input_pixel_range": [
+        0.0,
+        255.0
+    ],
+    "dataset_path": "C:\\Users\\oshan\\Desktop\\model 1 login pp2\\data\\prepared_login_uniform_top_viewport_384x160",
+    "manifest_path": "C:\\Users\\oshan\\Desktop\\model 1 login pp2\\reports\\13_uniform_top_viewport_dataset\\complete_uniform_top_viewport_manifest.csv",
+    "manifest_sha256": "c83a0c78069b61d24c0362d79d253394fc425a5ed21dd48b1084625278381ab9",
+    "training_images": 1992,
+    "validation_images": 426,
+    "diagnostic_test_images_used": 0,
+    "random_seed": 20260826,
+    "batch_size": 16,
+    "class_weights": null,
+    "classes_are_balanced": true,
+    "augmentation": {
+        "applied_to": "TRAIN_ONLY",
+        "same_for_both_classes": true,
+        "random_translation": 0.02,
+        "random_zoom": [
+            -0.03,
+            0.03
+        ],
+        "random_contrast": 0.08,
+        "horizontal_flip": false,
+        "rotation": false
+    },
+    "phase_1": {
+        "base_frozen": true,
+        "max_epochs": 15,
+        "learning_rate": 0.001,
+        "early_stopping_patience": 4,
+        "parameter_counts": {
+            "total_parameters": 6083409,
+            "trainable_parameters": 164097,
+            "non_trainable_parameters": 5919312
+        }
+    },
+    "phase_2": {
+        "fine_tune_last_layers_requested": 40,
+        "fine_tune_start_layer_index": 231,
+        "trainable_base_layers": 32,
+        "batch_normalization_frozen": true,
+        "base_called_with_training_false": true,
+        "max_epochs": 20,
+        "learning_rate": 1e-05,
+        "early_stopping_patience": 6,
+        "parameter_counts": {
+            "total_parameters": 6083409,
+            "trainable_parameters": 1816545,
+            "non_trainable_parameters": 4266864
+        }
+    },
+    "checkpoint_monitor": "val_pr_auc",
+    "checkpoint_selection_data": "VALIDATION_ONLY",
+    "checkpoint_primary_metric": "average_precision_pr_auc",
+    "threshold_selection_data": "VALIDATION_ONLY",
+    "primary_threshold_objective": "MCC",
+    "threshold_minimum": 0.01,
+    "threshold_maximum": 0.99,
+    "threshold_step": 0.001,
+    "test_split_status": "DIAGNOSTIC_ONLY_NOT_USED",
+    "external_dataset_required": true
+}

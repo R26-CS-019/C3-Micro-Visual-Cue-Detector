@@ -1,0 +1,9 @@
+@echo off
+setlocal
+if defined PP2_PYTHON (set "PP2_RESEARCH_PYTHON=%PP2_PYTHON%") else (set "PP2_RESEARCH_PYTHON=C:\Users\oshan\Desktop\MicroVisualPhishingDetector\venv\Scripts\python.exe")
+if not exist "%PP2_RESEARCH_PYTHON%" (
+  echo Set PP2_PYTHON to your TensorFlow environment's Python executable.
+  exit /b 1
+)
+"%PP2_RESEARCH_PYTHON%" -u -B "%~dp0research.py" %*
+exit /b %ERRORLEVEL%

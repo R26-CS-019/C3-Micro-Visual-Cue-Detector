@@ -1,0 +1,23 @@
+================================================================================
+MODEL 2 ERROR REVIEW SUMMARY
+================================================================================
+
+False positives: 184
+False-positive sheets: 23
+False negatives: 55
+False-negative sheets: 7
+Images per full sheet: 8
+
+REPORT FILES
+--------------------------------------------------------------------------------
+C:\Users\oshan\Desktop\new model 2 pp2\reports\model2_effnetv2b0\error_analysis\error_review_index.html
+C:\Users\oshan\Desktop\new model 2 pp2\reports\model2_effnetv2b0\error_analysis\error_review_decisions.csv
+C:\Users\oshan\Desktop\new model 2 pp2\reports\model2_effnetv2b0\error_analysis\false_positive_sheets
+C:\Users\oshan\Desktop\new model 2 pp2\reports\model2_effnetv2b0\error_analysis\false_negative_sheets
+C:\Users\oshan\Desktop\new model 2 pp2\reports\model2_effnetv2b0\error_analysis\error_review_summary.txt
+
+IMPORTANT
+--------------------------------------------------------------------------------
+No original screenshot or model file was modified.
+Do not retrain using fixed-test errors.
+================================================================================

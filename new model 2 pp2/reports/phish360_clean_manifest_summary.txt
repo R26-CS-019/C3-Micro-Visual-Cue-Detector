@@ -1,0 +1,39 @@
+================================================================================
+PHISH360 CLEAN MANIFEST SUMMARY
+================================================================================
+
+PAIR REVIEW
+--------------------------------------------------------------------------------
+Reviewed pairs: 45
+Confirmed near-duplicate pairs: 17
+False-match pairs kept: 28
+Unique confirmed trainval samples: 16
+
+CLEANING RESULTS
+--------------------------------------------------------------------------------
+Original manifest images: 10,734
+Images kept: 10,715
+Trainval images excluded: 19
+Test images excluded: 0
+Cross-split exact SHA-256 groups: 3
+Remaining confirmed pair leakage: 0
+Remaining exact cross-split leakage: 0
+
+COUNTS BY SPLIT AND LABEL
+--------------------------------------------------------------------------------
+TEST     | LEGITIMATE | Original: 1,499 | Kept: 1,499 | Excluded: 0
+TEST     | PHISHING   | Original: 1,266 | Kept: 1,266 | Excluded: 0
+TRAINVAL | LEGITIMATE | Original: 4,917 | Kept: 4,908 | Excluded: 9
+TRAINVAL | PHISHING   | Original: 3,052 | Kept: 3,042 | Excluded: 10
+
+REPORT FILES
+--------------------------------------------------------------------------------
+C:\Users\oshan\Desktop\new model 2 pp2\reports\phish360_manifest_with_cleaning_decisions.csv
+C:\Users\oshan\Desktop\new model 2 pp2\reports\phish360_clean_manifest.csv
+C:\Users\oshan\Desktop\new model 2 pp2\reports\phish360_excluded_samples.csv
+C:\Users\oshan\Desktop\new model 2 pp2\reports\phish360_clean_manifest_summary.txt
+
+IMPORTANT
+--------------------------------------------------------------------------------
+No original screenshots were deleted, moved, renamed, resized or modified.
+================================================================================

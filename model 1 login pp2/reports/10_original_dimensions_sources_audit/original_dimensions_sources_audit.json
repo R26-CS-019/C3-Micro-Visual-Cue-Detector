@@ -1,0 +1,393 @@
+{
+    "audit_result": "VERY_STRONG_ORIGINAL_GEOMETRY_CLASS_ASSOCIATION_FOUND",
+    "manifest_path": "C:\\Users\\oshan\\Desktop\\model 1 login pp2\\reports\\05_dataset_split\\complete_split_manifest.csv",
+    "manifest_sha256": "670dc509b5991051682625570c6eef8e2bd23a141294ee0893c650f2f18f23b1",
+    "original_dataset_path": "C:\\Users\\oshan\\Desktop\\new model 1 pp2\\dataset",
+    "manifest_images": 2846,
+    "successfully_inspected": 2846,
+    "resolution_rate": 1.0,
+    "class_counts": {
+        "NOT_MALICIOUS": 1423,
+        "MALICIOUS": 1423
+    },
+    "top_dimensions": {
+        "NOT_MALICIOUS": [
+            {
+                "dimensions": "1920x802",
+                "count": 1423
+            }
+        ],
+        "MALICIOUS": [
+            {
+                "dimensions": "1920x941",
+                "count": 1413
+            },
+            {
+                "dimensions": "960x401",
+                "count": 10
+            }
+        ]
+    },
+    "association_results": [
+        {
+            "scope": "OVERALL",
+            "feature": "original_dimensions",
+            "usable_images": 2846,
+            "category_count": 3,
+            "cramers_v": 1.0,
+            "association_strength": "VERY_STRONG",
+            "model_visibility_note": "POTENTIALLY_VISIBLE_THROUGH_GEOMETRY_OR_RESAMPLING"
+        },
+        {
+            "scope": "OVERALL",
+            "feature": "aspect_ratio_bucket",
+            "usable_images": 2846,
+            "category_count": 2,
+            "cramers_v": 0.9929971127227838,
+            "association_strength": "VERY_STRONG",
+            "model_visibility_note": "POTENTIALLY_VISIBLE_THROUGH_GEOMETRY_OR_RESAMPLING"
+        },
+        {
+            "scope": "OVERALL",
+            "feature": "orientation",
+            "usable_images": 2846,
+            "category_count": 1,
+            "cramers_v": 0.0,
+            "association_strength": "VERY_WEAK",
+            "model_visibility_note": "POTENTIALLY_VISIBLE_THROUGH_GEOMETRY_OR_RESAMPLING"
+        },
+        {
+            "scope": "OVERALL",
+            "feature": "image_size_bucket",
+            "usable_images": 2846,
+            "category_count": 2,
+            "cramers_v": 0.05938091519046794,
+            "association_strength": "VERY_WEAK",
+            "model_visibility_note": "POTENTIALLY_VISIBLE_THROUGH_GEOMETRY_OR_RESAMPLING"
+        },
+        {
+            "scope": "OVERALL",
+            "feature": "target_dimension_match",
+            "usable_images": 2846,
+            "category_count": 1,
+            "cramers_v": 0.0,
+            "association_strength": "VERY_WEAK",
+            "model_visibility_note": "POTENTIALLY_VISIBLE_THROUGH_GEOMETRY_OR_RESAMPLING"
+        },
+        {
+            "scope": "OVERALL",
+            "feature": "file_extension",
+            "usable_images": 2846,
+            "category_count": 1,
+            "cramers_v": 0.0,
+            "association_strength": "VERY_WEAK",
+            "model_visibility_note": "POSSIBLY_INDIRECT_THROUGH_ENCODING"
+        },
+        {
+            "scope": "OVERALL",
+            "feature": "detected_image_format",
+            "usable_images": 2846,
+            "category_count": 1,
+            "cramers_v": 0.0,
+            "association_strength": "VERY_WEAK",
+            "model_visibility_note": "POSSIBLY_INDIRECT_THROUGH_ENCODING"
+        },
+        {
+            "scope": "OVERALL",
+            "feature": "source_folder",
+            "usable_images": 2846,
+            "category_count": 2,
+            "cramers_v": 1.0,
+            "association_strength": "VERY_STRONG",
+            "model_visibility_note": "METADATA_ONLY_NOT_DIRECTLY_VISIBLE"
+        },
+        {
+            "scope": "OVERALL",
+            "feature": "filename_pattern",
+            "usable_images": 2846,
+            "category_count": 2,
+            "cramers_v": 1.0,
+            "association_strength": "VERY_STRONG",
+            "model_visibility_note": "METADATA_ONLY_NOT_DIRECTLY_VISIBLE"
+        },
+        {
+            "scope": "OVERALL",
+            "feature": "viewport_action",
+            "usable_images": 2846,
+            "category_count": 2,
+            "cramers_v": 0.9929971127227838,
+            "association_strength": "VERY_STRONG",
+            "model_visibility_note": "POTENTIALLY_VISIBLE_THROUGH_GEOMETRY_OR_RESAMPLING"
+        },
+        {
+            "scope": "TEST",
+            "feature": "original_dimensions",
+            "usable_images": 428,
+            "category_count": 3,
+            "cramers_v": 1.0,
+            "association_strength": "VERY_STRONG",
+            "model_visibility_note": "POTENTIALLY_VISIBLE_THROUGH_GEOMETRY_OR_RESAMPLING"
+        },
+        {
+            "scope": "TEST",
+            "feature": "aspect_ratio_bucket",
+            "usable_images": 428,
+            "category_count": 2,
+            "cramers_v": 0.9953379699471958,
+            "association_strength": "VERY_STRONG",
+            "model_visibility_note": "POTENTIALLY_VISIBLE_THROUGH_GEOMETRY_OR_RESAMPLING"
+        },
+        {
+            "scope": "TEST",
+            "feature": "orientation",
+            "usable_images": 428,
+            "category_count": 1,
+            "cramers_v": 0.0,
+            "association_strength": "VERY_WEAK",
+            "model_visibility_note": "POTENTIALLY_VISIBLE_THROUGH_GEOMETRY_OR_RESAMPLING"
+        },
+        {
+            "scope": "TEST",
+            "feature": "image_size_bucket",
+            "usable_images": 428,
+            "category_count": 2,
+            "cramers_v": 0.048393391849582724,
+            "association_strength": "VERY_WEAK",
+            "model_visibility_note": "POTENTIALLY_VISIBLE_THROUGH_GEOMETRY_OR_RESAMPLING"
+        },
+        {
+            "scope": "TEST",
+            "feature": "target_dimension_match",
+            "usable_images": 428,
+            "category_count": 1,
+            "cramers_v": 0.0,
+            "association_strength": "VERY_WEAK",
+            "model_visibility_note": "POTENTIALLY_VISIBLE_THROUGH_GEOMETRY_OR_RESAMPLING"
+        },
+        {
+            "scope": "TEST",
+            "feature": "file_extension",
+            "usable_images": 428,
+            "category_count": 1,
+            "cramers_v": 0.0,
+            "association_strength": "VERY_WEAK",
+            "model_visibility_note": "POSSIBLY_INDIRECT_THROUGH_ENCODING"
+        },
+        {
+            "scope": "TEST",
+            "feature": "detected_image_format",
+            "usable_images": 428,
+            "category_count": 1,
+            "cramers_v": 0.0,
+            "association_strength": "VERY_WEAK",
+            "model_visibility_note": "POSSIBLY_INDIRECT_THROUGH_ENCODING"
+        },
+        {
+            "scope": "TEST",
+            "feature": "source_folder",
+            "usable_images": 428,
+            "category_count": 2,
+            "cramers_v": 1.0,
+            "association_strength": "VERY_STRONG",
+            "model_visibility_note": "METADATA_ONLY_NOT_DIRECTLY_VISIBLE"
+        },
+        {
+            "scope": "TEST",
+            "feature": "filename_pattern",
+            "usable_images": 428,
+            "category_count": 2,
+            "cramers_v": 1.0,
+            "association_strength": "VERY_STRONG",
+            "model_visibility_note": "METADATA_ONLY_NOT_DIRECTLY_VISIBLE"
+        },
+        {
+            "scope": "TEST",
+            "feature": "viewport_action",
+            "usable_images": 428,
+            "category_count": 2,
+            "cramers_v": 0.9953379699471958,
+            "association_strength": "VERY_STRONG",
+            "model_visibility_note": "POTENTIALLY_VISIBLE_THROUGH_GEOMETRY_OR_RESAMPLING"
+        },
+        {
+            "scope": "TRAIN",
+            "feature": "original_dimensions",
+            "usable_images": 1992,
+            "category_count": 3,
+            "cramers_v": 1.0,
+            "association_strength": "VERY_STRONG",
+            "model_visibility_note": "POTENTIALLY_VISIBLE_THROUGH_GEOMETRY_OR_RESAMPLING"
+        },
+        {
+            "scope": "TRAIN",
+            "feature": "aspect_ratio_bucket",
+            "usable_images": 1992,
+            "category_count": 2,
+            "cramers_v": 0.991004314944595,
+            "association_strength": "VERY_STRONG",
+            "model_visibility_note": "POTENTIALLY_VISIBLE_THROUGH_GEOMETRY_OR_RESAMPLING"
+        },
+        {
+            "scope": "TRAIN",
+            "feature": "orientation",
+            "usable_images": 1992,
+            "category_count": 1,
+            "cramers_v": 0.0,
+            "association_strength": "VERY_WEAK",
+            "model_visibility_note": "POTENTIALLY_VISIBLE_THROUGH_GEOMETRY_OR_RESAMPLING"
+        },
+        {
+            "scope": "TRAIN",
+            "feature": "image_size_bucket",
+            "usable_images": 1992,
+            "category_count": 2,
+            "cramers_v": 0.06736896846660308,
+            "association_strength": "VERY_WEAK",
+            "model_visibility_note": "POTENTIALLY_VISIBLE_THROUGH_GEOMETRY_OR_RESAMPLING"
+        },
+        {
+            "scope": "TRAIN",
+            "feature": "target_dimension_match",
+            "usable_images": 1992,
+            "category_count": 1,
+            "cramers_v": 0.0,
+            "association_strength": "VERY_WEAK",
+            "model_visibility_note": "POTENTIALLY_VISIBLE_THROUGH_GEOMETRY_OR_RESAMPLING"
+        },
+        {
+            "scope": "TRAIN",
+            "feature": "file_extension",
+            "usable_images": 1992,
+            "category_count": 1,
+            "cramers_v": 0.0,
+            "association_strength": "VERY_WEAK",
+            "model_visibility_note": "POSSIBLY_INDIRECT_THROUGH_ENCODING"
+        },
+        {
+            "scope": "TRAIN",
+            "feature": "detected_image_format",
+            "usable_images": 1992,
+            "category_count": 1,
+            "cramers_v": 0.0,
+            "association_strength": "VERY_WEAK",
+            "model_visibility_note": "POSSIBLY_INDIRECT_THROUGH_ENCODING"
+        },
+        {
+            "scope": "TRAIN",
+            "feature": "source_folder",
+            "usable_images": 1992,
+            "category_count": 2,
+            "cramers_v": 1.0,
+            "association_strength": "VERY_STRONG",
+            "model_visibility_note": "METADATA_ONLY_NOT_DIRECTLY_VISIBLE"
+        },
+        {
+            "scope": "TRAIN",
+            "feature": "filename_pattern",
+            "usable_images": 1992,
+            "category_count": 2,
+            "cramers_v": 1.0,
+            "association_strength": "VERY_STRONG",
+            "model_visibility_note": "METADATA_ONLY_NOT_DIRECTLY_VISIBLE"
+        },
+        {
+            "scope": "TRAIN",
+            "feature": "viewport_action",
+            "usable_images": 1992,
+            "category_count": 2,
+            "cramers_v": 0.991004314944595,
+            "association_strength": "VERY_STRONG",
+            "model_visibility_note": "POTENTIALLY_VISIBLE_THROUGH_GEOMETRY_OR_RESAMPLING"
+        },
+        {
+            "scope": "VALIDATION",
+            "feature": "original_dimensions",
+            "usable_images": 426,
+            "category_count": 2,
+            "cramers_v": 1.0,
+            "association_strength": "VERY_STRONG",
+            "model_visibility_note": "POTENTIALLY_VISIBLE_THROUGH_GEOMETRY_OR_RESAMPLING"
+        },
+        {
+            "scope": "VALIDATION",
+            "feature": "aspect_ratio_bucket",
+            "usable_images": 426,
+            "category_count": 2,
+            "cramers_v": 1.0,
+            "association_strength": "VERY_STRONG",
+            "model_visibility_note": "POTENTIALLY_VISIBLE_THROUGH_GEOMETRY_OR_RESAMPLING"
+        },
+        {
+            "scope": "VALIDATION",
+            "feature": "orientation",
+            "usable_images": 426,
+            "category_count": 1,
+            "cramers_v": 0.0,
+            "association_strength": "VERY_WEAK",
+            "model_visibility_note": "POTENTIALLY_VISIBLE_THROUGH_GEOMETRY_OR_RESAMPLING"
+        },
+        {
+            "scope": "VALIDATION",
+            "feature": "image_size_bucket",
+            "usable_images": 426,
+            "category_count": 1,
+            "cramers_v": 0.0,
+            "association_strength": "VERY_WEAK",
+            "model_visibility_note": "POTENTIALLY_VISIBLE_THROUGH_GEOMETRY_OR_RESAMPLING"
+        },
+        {
+            "scope": "VALIDATION",
+            "feature": "target_dimension_match",
+            "usable_images": 426,
+            "category_count": 1,
+            "cramers_v": 0.0,
+            "association_strength": "VERY_WEAK",
+            "model_visibility_note": "POTENTIALLY_VISIBLE_THROUGH_GEOMETRY_OR_RESAMPLING"
+        },
+        {
+            "scope": "VALIDATION",
+            "feature": "file_extension",
+            "usable_images": 426,
+            "category_count": 1,
+            "cramers_v": 0.0,
+            "association_strength": "VERY_WEAK",
+            "model_visibility_note": "POSSIBLY_INDIRECT_THROUGH_ENCODING"
+        },
+        {
+            "scope": "VALIDATION",
+            "feature": "detected_image_format",
+            "usable_images": 426,
+            "category_count": 1,
+            "cramers_v": 0.0,
+            "association_strength": "VERY_WEAK",
+            "model_visibility_note": "POSSIBLY_INDIRECT_THROUGH_ENCODING"
+        },
+        {
+            "scope": "VALIDATION",
+            "feature": "source_folder",
+            "usable_images": 426,
+            "category_count": 2,
+            "cramers_v": 1.0,
+            "association_strength": "VERY_STRONG",
+            "model_visibility_note": "METADATA_ONLY_NOT_DIRECTLY_VISIBLE"
+        },
+        {
+            "scope": "VALIDATION",
+            "feature": "filename_pattern",
+            "usable_images": 426,
+            "category_count": 2,
+            "cramers_v": 1.0,
+            "association_strength": "VERY_STRONG",
+            "model_visibility_note": "METADATA_ONLY_NOT_DIRECTLY_VISIBLE"
+        },
+        {
+            "scope": "VALIDATION",
+            "feature": "viewport_action",
+            "usable_images": 426,
+            "category_count": 2,
+            "cramers_v": 1.0,
+            "association_strength": "VERY_STRONG",
+            "model_visibility_note": "POTENTIALLY_VISIBLE_THROUGH_GEOMETRY_OR_RESAMPLING"
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+{
+  "stage": "stage2_partial_fine_tuning",
+  "source_stage1_model": "C:\\Users\\oshan\\Desktop\\new model 2 pp2\\models\\model2_effnetv2b0\\stage1\\model2_effnetv2b0_stage1_best.keras",
+  "backbone": "efficientnetv2-b0",
+  "requested_final_backbone_layers": 40,
+  "trainable_weighted_backbone_layers": 14,
+  "learning_rate": 1e-05,
+  "maximum_epochs": 15,
+  "completed_epochs": 15,
+  "training_images": 4868,
+  "validation_images": 1216,
+  "fixed_test_images_used": 0,
+  "training_augmentation": true,
+  "validation_augmentation": false,
+  "best_model": "C:\\Users\\oshan\\Desktop\\new model 2 pp2\\models\\model2_effnetv2b0\\stage2\\model2_effnetv2b0_stage2_best.keras",
+  "validation_metrics": {
+    "accuracy": 0.9004934430122375,
+    "auc_pr": 0.957974910736084,
+    "auc_roc": 0.961958646774292,
+    "loss": 0.25168919563293457,
+    "precision": 0.9092437028884888,
+    "recall": 0.8898026347160339,
+    "f1_score": 0.899418125612493
+  }
+}

@@ -1,0 +1,40 @@
+================================================================================
+MODEL 1 DATASET SPLIT SUMMARY
+================================================================================
+
+Random seed: 20260826
+
+TRAIN
+--------------------------------------------------------------------------------
+Total images          : 1992
+MALICIOUS              : 996
+NOT_MALICIOUS          : 996
+Top-cropped images     : 987
+Uncropped images       : 1005
+
+VALIDATION
+--------------------------------------------------------------------------------
+Total images          : 426
+MALICIOUS              : 213
+NOT_MALICIOUS          : 213
+Top-cropped images     : 213
+Uncropped images       : 213
+
+TEST
+--------------------------------------------------------------------------------
+Total images          : 428
+MALICIOUS              : 214
+NOT_MALICIOUS          : 214
+Top-cropped images     : 213
+Uncropped images       : 215
+
+LEAKAGE CHECKS
+--------------------------------------------------------------------------------
+Cross-split path leakage     : 0
+Cross-split exact leakage    : 0
+
+The TEST manifest must not be used during
+model selection or threshold tuning.
+
+No image was moved, deleted or modified.
+================================================================================

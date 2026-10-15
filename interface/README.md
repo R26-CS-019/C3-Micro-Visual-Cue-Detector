@@ -1,0 +1,13 @@
+# Local visual component interface
+
+Double-click `Open Visual Component.cmd` in the full project folder (or run `run_interface.ps1`), keep the terminal open, then open http://127.0.0.1:8765. Paste an HTTP(S) URL and select **Analyse website**. The first analysis loads and verifies both frozen checkpoints; later analyses reuse them. Page capture has a 30-second navigation timeout plus a 10-second render wait. Grad-CAM adds inference time.
+
+The interface calls the existing HTML router, model prediction and preprocessing functions. It checks their checkpoint paths, thresholds, input tensors and prediction scores against the research registry. It generates both class heatmaps with the existing research engine, which checks the explanation forward path against inference. There is no training or threshold tuning.
+
+Browser capture uses the original 1366 × 768 viewport, DOM-content-loaded navigation and viewport screenshot, with a longer ten-second render wait and headless Chromium. The terminal script uses a three-second wait and a visible browser; these differences are recorded in each run. Websites may render differently. Routing deliberately uses the submitted URL, matching the original component, while the final captured URL is recorded separately.
+
+Each successful run saves its screenshot, captured HTML, model input PNG, exact float input NPY, both heatmaps/overlays, explanation metadata, checkpoint hash/settings, result JSON and prediction CSV in `interface/results/<run-id>/`. Completed runs reappear after restart. HTML is retained on disk for reproducibility and is not served as executable content. Capture warnings indicate HTTP errors, likely verification pages or very little visible text; review the screenshot before treating a result as website evidence. Predictions remain classifications of the captured image, including flagged captures.
+
+The service binds only to 127.0.0.1, uses Python's standard HTTP server, rejects cross-origin submissions and exposes only named evidence files. It is a local single-user research tool. It does not require FastAPI, an account or a hosted service. Uses the existing TensorFlow/Pillow/Playwright environment and installed Chromium.
+
+For a different port: `run_interface.ps1 -Port 8766`. Press Ctrl+C in the terminal to stop (an active job finishes before exit). Do not close that terminal while using the interface.

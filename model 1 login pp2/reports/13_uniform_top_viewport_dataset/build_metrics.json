@@ -1,0 +1,21 @@
+{
+    "processing_action": "UNIFORM_WIDTH_SCALE_TOP_VIEWPORT",
+    "target_width": 384,
+    "target_height": 160,
+    "total_images": 2846,
+    "class_counts": {
+        "NOT_MALICIOUS": 1423,
+        "MALICIOUS": 1423
+    },
+    "split_counts": {
+        "TRAIN": 1992,
+        "VALIDATION": 426,
+        "TEST": 428
+    },
+    "source_manifest_path": "C:\\Users\\oshan\\Desktop\\model 1 login pp2\\reports\\05_dataset_split\\complete_split_manifest.csv",
+    "source_manifest_sha256": "670dc509b5991051682625570c6eef8e2bd23a141294ee0893c650f2f18f23b1",
+    "output_dataset_path": "C:\\Users\\oshan\\Desktop\\model 1 login pp2\\data\\prepared_login_uniform_top_viewport_384x160",
+    "output_manifest_path": "C:\\Users\\oshan\\Desktop\\model 1 login pp2\\reports\\13_uniform_top_viewport_dataset\\complete_uniform_top_viewport_manifest.csv",
+    "output_manifest_sha256": "c83a0c78069b61d24c0362d79d253394fc425a5ed21dd48b1084625278381ab9",
+    "test_split_status": "DIAGNOSTIC_ONLY"
+}

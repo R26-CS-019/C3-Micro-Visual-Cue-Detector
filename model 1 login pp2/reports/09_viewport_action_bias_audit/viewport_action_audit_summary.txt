@@ -1,0 +1,45 @@
+================================================================================
+MODEL 1 VIEWPORT-ACTION BIAS AUDIT COMPLETE
+================================================================================
+
+Manifest             : C:\Users\oshan\Desktop\model 1 login pp2\reports\05_dataset_split\complete_split_manifest.csv
+Manifest SHA256      : 670dc509b5991051682625570c6eef8e2bd23a141294ee0893c650f2f18f23b1
+Test predictions     : C:\Users\oshan\Desktop\model 1 login pp2\reports\07_locked_test_evaluation\test_predictions.csv
+Predictions SHA256   : cbb55d7cc711f7ee5647131f3ce358f4fb11e9c473bafffa5823531fa3313b26
+
+DATASET COUNTS
+--------------------------------------------------------------------------------
+Total images         : 2846
+TEST                 : 428
+TRAIN                : 1992
+VALIDATION           : 426
+
+VIEWPORT/CLASS ASSOCIATION
+--------------------------------------------------------------------------------
+OVERALL              : Cramer's V = 0.992997 (VERY_STRONG)
+TEST                 : Cramer's V = 0.995338 (VERY_STRONG)
+TRAIN                : Cramer's V = 0.991004 (VERY_STRONG)
+VALIDATION           : Cramer's V = 1.000000 (VERY_STRONG)
+
+LOCKED TEST ERROR DISTRIBUTION
+--------------------------------------------------------------------------------
+OVERALL              : Total=428, TN=126, FP=88, FN=20, TP=194
+NONE                 : Total=215, TN=126, FP=88, FN=1, TP=0
+TOP_CROP             : Total=213, TN=0, FP=0, FN=19, TP=194
+
+AUDIT RESULT
+--------------------------------------------------------------------------------
+POTENTIAL_VIEWPORT_ACTION_CLASS_ASSOCIATION_FOUND
+
+INTERPRETATION
+--------------------------------------------------------------------------------
+A strong association does not prove that cropping directly caused the model errors.
+However, it can indicate that preprocessing or dataset source is connected to class.
+The model may learn visual source or image-composition shortcuts instead of phishing cues.
+
+IMPORTANT
+--------------------------------------------------------------------------------
+No model training was performed.
+The threshold was not changed.
+No screenshot or manifest was modified.
+================================================================================

@@ -1,0 +1,54 @@
+================================================================================
+MODEL 2 PHISH-IRIS PRELIMINARY EXTERNAL EVALUATION RESULTS
+================================================================================
+
+LOCKED CONFIGURATION
+--------------------------------------------------------------------------------
+Model: C:\Users\oshan\Desktop\new model 2 pp2\models\model2_effnetv2b0\stage2\model2_effnetv2b0_stage2_best.keras
+Threshold: 0.392
+Threshold selected using: Phish360 validation only
+Model changed for external data: NO
+Threshold changed for external data: NO
+Training performed on Phish-IRIS: NO
+External images: 2,449
+External LEGITIMATE: 1,370
+External PHISHING: 1,079
+Internal exact duplicates remaining: 0
+Phish360 near-duplicate overlap check completed: NO
+
+EXTERNAL METRICS
+--------------------------------------------------------------------------------
+Accuracy           : 0.819110
+Precision          : 0.733138
+Recall             : 0.926784
+Specificity        : 0.734307
+F1-score           : 0.818666
+Balanced accuracy  : 0.830545
+ROC-AUC            : 0.901681
+PR-AUC             : 0.836589
+False-positive rate: 0.265693
+False-negative rate: 0.073216
+Confusion matrix    : TN=1006, FP=364, FN=79, TP=1000
+
+ERROR COUNTS
+--------------------------------------------------------------------------------
+False positives: 364
+False negatives: 79
+
+REPORT FILES
+--------------------------------------------------------------------------------
+C:\Users\oshan\Desktop\new model 2 pp2\reports\model2_effnetv2b0\external_evaluation\phish_iris\evaluation\phish_iris_external_predictions.csv
+C:\Users\oshan\Desktop\new model 2 pp2\reports\model2_effnetv2b0\external_evaluation\phish_iris\evaluation\phish_iris_external_false_positives.csv
+C:\Users\oshan\Desktop\new model 2 pp2\reports\model2_effnetv2b0\external_evaluation\phish_iris\evaluation\phish_iris_external_false_negatives.csv
+C:\Users\oshan\Desktop\new model 2 pp2\reports\model2_effnetv2b0\external_evaluation\phish_iris\evaluation\phish_iris_external_class_metrics.csv
+C:\Users\oshan\Desktop\new model 2 pp2\reports\model2_effnetv2b0\external_evaluation\phish_iris\evaluation\phish_iris_external_results.json
+C:\Users\oshan\Desktop\new model 2 pp2\reports\model2_effnetv2b0\external_evaluation\phish_iris\evaluation\phish_iris_external_summary.txt
+C:\Users\oshan\Desktop\new model 2 pp2\reports\model2_effnetv2b0\external_evaluation\phish_iris\evaluation\phish_iris_external_confusion_matrix.png
+C:\Users\oshan\Desktop\new model 2 pp2\reports\model2_effnetv2b0\external_evaluation\phish_iris\evaluation\phish_iris_external_roc_pr_curves.png
+
+IMPORTANT
+--------------------------------------------------------------------------------
+This is an external inference evaluation, not training.
+Do not tune the model or threshold using these results.
+Because Phish360 near-duplicate overlap was not checked, report this as a preliminary external evaluation.
+================================================================================

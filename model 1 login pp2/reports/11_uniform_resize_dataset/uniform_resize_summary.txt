@@ -1,0 +1,54 @@
+================================================================================
+UNIFORM RESIZE DATASET CREATION COMPLETE
+================================================================================
+
+Original dataset      : C:\Users\oshan\Desktop\new model 1 pp2\dataset
+Source manifest       : C:\Users\oshan\Desktop\model 1 login pp2\reports\05_dataset_split\complete_split_manifest.csv
+Source manifest SHA256: 670dc509b5991051682625570c6eef8e2bd23a141294ee0893c650f2f18f23b1
+New dataset           : C:\Users\oshan\Desktop\model 1 login pp2\data\prepared_login_uniform_384x160
+
+PROCESSING
+--------------------------------------------------------------------------------
+Action                : UNIFORM_DIRECT_RESIZE
+Target dimensions     : 384x160
+Colour mode           : RGB
+Output format         : PNG
+Interpolation         : LANCZOS
+Cropping              : NONE FOR BOTH CLASSES
+
+DATASET COUNTS
+--------------------------------------------------------------------------------
+Total images          : 2846
+NOT_MALICIOUS         : 1423
+MALICIOUS             : 1423
+
+TRAIN                 : 1992
+  NOT_MALICIOUS       : 996
+  MALICIOUS           : 996
+VALIDATION            : 426
+  NOT_MALICIOUS       : 213
+  MALICIOUS           : 213
+TEST                  : 428
+  NOT_MALICIOUS       : 214
+  MALICIOUS           : 214
+
+OLD PREPROCESSING DISTRIBUTION
+--------------------------------------------------------------------------------
+MALICIOUS       | NONE            : 10
+MALICIOUS       | TOP_CROP        : 1413
+NOT_MALICIOUS   | NONE            : 1423
+
+NEW OUTPUT DIMENSIONS
+--------------------------------------------------------------------------------
+384x160: 2846
+
+IMPORTANT
+--------------------------------------------------------------------------------
+All classes were processed using the same direct-resize operation.
+No TOP_CROP operation was used for either class.
+The existing prepared dataset was not modified.
+The original screenshots were not modified.
+Existing split assignments were preserved.
+The existing TEST split is now diagnostic only because its results were already inspected.
+A separate external dataset is still required for final evaluation.
+================================================================================

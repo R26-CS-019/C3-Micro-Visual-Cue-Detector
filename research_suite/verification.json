@@ -1,0 +1,111 @@
+{
+  "created_utc": "2026-10-11T08:57:37.704328+00:00",
+  "unit_tests": {
+    "command": "python -B -m unittest test_research -v",
+    "passed": 7
+  },
+  "same_brand_images": 20,
+  "archived_prediction_max_absolute_error": 0.0,
+  "two_checkpoint_smoke_max_absolute_error": 5.960464477539063e-08,
+  "gradcam_class_maps_checked": 44,
+  "gradcam_forward_max_absolute_error": 0.0,
+  "mask_variants_checked": 7,
+  "baseline_split_counts": {
+    "TRAIN": 1992,
+    "VALIDATION": 426,
+    "TEST": 428
+  },
+  "baseline": [
+    {
+      "method": "colour_layout_logistic",
+      "images": 428,
+      "threshold": 0.4888368032183398,
+      "tn": 108,
+      "fp": 106,
+      "fn": 38,
+      "tp": 176,
+      "accuracy": 0.6635514018691588,
+      "precision": 0.624113475177305,
+      "recall": 0.822429906542056,
+      "specificity": 0.5046728971962616,
+      "false_positive_rate": 0.4953271028037383,
+      "f1": 0.7096774193548387,
+      "balanced_accuracy": 0.6635514018691588,
+      "brier_score": 0.2069947855422544,
+      "recall_wilson_95": [
+        0.7656793744829988,
+        0.8678088547414857
+      ],
+      "fpr_wilson_95": [
+        0.4290154505379326,
+        0.5618035606327272
+      ],
+      "interval_note": "Wilson intervals assume independent observations; repeated templates violate this assumption."
+    },
+    {
+      "method": "dimensions_only_logistic",
+      "images": 428,
+      "threshold": 0.5,
+      "tn": 214,
+      "fp": 0,
+      "fn": 0,
+      "tp": 214,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "specificity": 1.0,
+      "false_positive_rate": 0.0,
+      "f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "brier_score": 0.0006815780204857444,
+      "recall_wilson_95": [
+        0.9823658047394183,
+        1.0
+      ],
+      "fpr_wilson_95": [
+        0.0,
+        0.017634195260581874
+      ],
+      "interval_note": "Wilson intervals assume independent observations; repeated templates violate this assumption."
+    },
+    {
+      "method": "cnn",
+      "images": 428,
+      "threshold": 0.466,
+      "tn": 184,
+      "fp": 30,
+      "fn": 49,
+      "tp": 165,
+      "accuracy": 0.8154205607476636,
+      "precision": 0.8461538461538461,
+      "recall": 0.7710280373831776,
+      "specificity": 0.8598130841121495,
+      "false_positive_rate": 0.14018691588785046,
+      "f1": 0.8068459657701712,
+      "balanced_accuracy": 0.8154205607476636,
+      "brier_score": 0.13489256072037725,
+      "recall_wilson_95": [
+        0.7102482279450744,
+        0.8222491241566663
+      ],
+      "fpr_wilson_95": [
+        0.0999938929570302,
+        0.19306996718376235
+      ],
+      "interval_note": "Wilson intervals assume independent observations; repeated templates violate this assumption."
+    }
+  ],
+  "audit": {
+    "evaluation_images": 20,
+    "reference_images": 2418,
+    "exact_match_pairs": 0,
+    "unresolved_near_candidates": 6
+  },
+  "unseen_brand_evaluation_performed": false,
+  "checkpoint_weights_modified": false,
+  "limitations": [
+    "Verification checks tool behavior, not brand independence.",
+    "Same-brand labels and canonical brands require provenance review.",
+    "No fresh final test or retraining was performed."
+  ]
+}

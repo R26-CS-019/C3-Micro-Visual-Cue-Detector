@@ -1,0 +1,38 @@
+================================================================================
+MODEL 1 LOCKED TEST EVALUATION COMPLETE
+================================================================================
+
+Model                  : C:\Users\oshan\Desktop\model 1 login pp2\models\model1_mobilenetv3large\model1_selected_best.keras
+Decision threshold     : 0.1900
+Test images            : 428
+
+TEST RESULTS
+--------------------------------------------------------------------------------
+Accuracy               : 0.747664
+Balanced accuracy      : 0.747664
+Precision              : 0.687943
+Recall / sensitivity   : 0.906542
+Specificity            : 0.588785
+F1 score               : 0.782258
+MCC                    : 0.522402
+ROC-AUC                : 0.898397
+Average precision      : 0.913114
+False-positive rate    : 0.411215
+False-negative rate    : 0.093458
+Negative predictive val: 0.863014
+
+CONFUSION MATRIX
+--------------------------------------------------------------------------------
+TN: 126
+FP: 88
+FN: 20
+TP: 194
+
+IMPORTANT
+--------------------------------------------------------------------------------
+This was the locked test evaluation.
+The model was not retrained.
+The threshold was not changed.
+No screenshot was modified.
+Do not tune the model using these test results.
+================================================================================

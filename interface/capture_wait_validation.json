@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "render_delay_ms": 8000,
+  "capture_wait_ms": 10000,
+  "elapsed_seconds": 13.219000000004598,
+  "checks": [
+    "Delayed content present in captured HTML",
+    "Rendered background present in screenshot",
+    "Original viewport preserved",
+    "Ten-second setting recorded"
+  ]
+}

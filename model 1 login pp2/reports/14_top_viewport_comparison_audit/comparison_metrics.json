@@ -1,0 +1,60 @@
+{
+    "audit_result": "NEW_DATASET_MEANINGFULLY_DIFFERS_VISUAL_REVIEW_REQUIRED",
+    "old_dataset_path": "C:\\Users\\oshan\\Desktop\\model 1 login pp2\\data\\prepared_login_384x160",
+    "new_dataset_path": "C:\\Users\\oshan\\Desktop\\model 1 login pp2\\data\\prepared_login_uniform_top_viewport_384x160",
+    "new_manifest_path": "C:\\Users\\oshan\\Desktop\\model 1 login pp2\\reports\\13_uniform_top_viewport_dataset\\complete_uniform_top_viewport_manifest.csv",
+    "new_manifest_sha256": "c83a0c78069b61d24c0362d79d253394fc425a5ed21dd48b1084625278381ab9",
+    "manifest_images": 2846,
+    "successfully_compared": 2846,
+    "validation_passed": 2846,
+    "validation_failed": 0,
+    "new_manifest_hash_matches": 2846,
+    "file_sha256_identical": 0,
+    "pixel_identical": 0,
+    "similarity_categories": {
+        "MODERATELY_SIMILAR": 1251,
+        "HIGHLY_SIMILAR": 1508,
+        "VISUALLY_DIFFERENT": 62,
+        "NEAR_IDENTICAL": 25
+    },
+    "class_metrics": {
+        "NOT_MALICIOUS": {
+            "compared_images": 1423,
+            "similarity_categories": {
+                "MODERATELY_SIMILAR": 697,
+                "HIGHLY_SIMILAR": 683,
+                "VISUALLY_DIFFERENT": 32,
+                "NEAR_IDENTICAL": 11
+            },
+            "mean_normalized_mae": 0.015753506756781447,
+            "maximum_normalized_mae": 0.0686730239,
+            "mean_phash_distance": 2.4525650035137034,
+            "maximum_phash_distance": 12,
+            "mean_dhash_distance": 1.3457484188334505,
+            "maximum_dhash_distance": 8
+        },
+        "MALICIOUS": {
+            "compared_images": 1423,
+            "similarity_categories": {
+                "MODERATELY_SIMILAR": 554,
+                "HIGHLY_SIMILAR": 825,
+                "VISUALLY_DIFFERENT": 30,
+                "NEAR_IDENTICAL": 14
+            },
+            "mean_normalized_mae": 0.012988154879831343,
+            "maximum_normalized_mae": 0.1398584729,
+            "mean_phash_distance": 2.6718200983836966,
+            "maximum_phash_distance": 28,
+            "mean_dhash_distance": 1.101194659170766,
+            "maximum_dhash_distance": 24
+        }
+    },
+    "duplicate_hash_groups": 0,
+    "cross_split_duplicate_groups": 0,
+    "cross_class_duplicate_groups": 0,
+    "review_sheets": [
+        "C:\\Users\\oshan\\Desktop\\model 1 login pp2\\reports\\14_top_viewport_comparison_audit\\NOT_MALICIOUS_old_vs_new_most_changed.png",
+        "C:\\Users\\oshan\\Desktop\\model 1 login pp2\\reports\\14_top_viewport_comparison_audit\\MALICIOUS_old_vs_new_most_changed.png"
+    ],
+    "test_split_status": "DIAGNOSTIC_ONLY"
+}

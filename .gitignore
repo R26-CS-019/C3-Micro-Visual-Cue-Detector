@@ -1,0 +1,74 @@
+# Python environment and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+*.log
+.env
+
+# Datasets and big data files
+data/
+dataset/
+datasets/
+Dataset.zip
+external Dataset/
+external datasets/
+*.parquet
+*.sqlite
+*.sqlite3
+*.zip
+
+# Training/validation screenshots and captured pages of real phishing sites
+**/url_capture/
+**/predictions/
+**/external_samples/
+**/screenshots/
+**/train/
+**/val/
+**/test/
+
+# Saved web pages, raw arrays, data manifests
+*.html
+*.npy
+*.npz
+*manifest*.csv
+
+# Screenshots, review sheets and captured pages
+interface/results/
+Micro Visual Cue Component/results/
+research_suite/results/
+**/cross_split_pair_review/
+**/cross_split_review/
+**/19_single_screenshot_predictions/
+**/08_test_error_review_sheets/
+**/02_visual_review/
+**/16_efficientnet_validation_error_review/
+**/12_uniform_resize_audit/
+*.jpg
+*.jpeg
+
+
+# Loose screenshots and real-site images
+leg/
+research_suite/examples/login_pages_images/
+model 1 login pp2/*.png
+model 1 login pp2/*.webp
+*.webp
+
+# CSVs that list dataset files: keep only metrics and training logs
+*.csv
+!*metrics*.csv
+!*training_log*.csv
+
+# Keep the app's own interface page
+!interface/static/*.html
+**/14_top_viewport_comparison_audit/*_old_vs_new_most_changed.png
+**/stage1_augmentation_spotcheck.png
+
+new model 2 pp2/cd
+new model 2 pp2/dir
+
+*.xlsx

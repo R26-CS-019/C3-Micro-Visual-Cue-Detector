@@ -1,0 +1,69 @@
+================================================================================
+PHISH-IRIS CLEAN EXTERNAL MANIFEST SUMMARY
+================================================================================
+
+INPUT DATASET
+--------------------------------------------------------------------------------
+Original valid images: 2,849
+Original LEGITIMATE: 1,397
+Original PHISHING: 1,452
+
+EXACT DEDUPLICATION
+--------------------------------------------------------------------------------
+Unique SHA-256 values: 2,449
+Exact duplicate groups: 320
+Exact duplicate copies excluded: 400
+Duplicate groups crossing original train/val: 193
+Cross-label exact duplicate groups: 0
+
+CLEAN EXTERNAL MANIFEST
+--------------------------------------------------------------------------------
+Images kept: 2,449
+LEGITIMATE kept: 1,370
+PHISHING kept: 1,079
+LEGITIMATE duplicates excluded: 27
+PHISHING duplicates excluded: 373
+
+CLEAN COUNTS BY ORIGINAL SOURCE SPLIT
+--------------------------------------------------------------------------------
+TRAIN: 932
+VAL: 1,517
+
+CLEAN COUNTS BY ORIGINAL CLASS
+--------------------------------------------------------------------------------
+adobe: 56
+alibaba: 55
+amazon: 24
+apple: 48
+boa: 82
+chase: 84
+dhl: 78
+dropbox: 80
+facebook: 110
+linkedin: 30
+microsoft: 91
+other: 1,370
+paypal: 175
+wellsfargo: 89
+yahoo: 77
+
+VERIFICATION
+--------------------------------------------------------------------------------
+Remaining internal exact duplicates: 0
+Label-conflict groups: 0
+Total kept + excluded equals original: YES
+
+REPORT FILES
+--------------------------------------------------------------------------------
+C:\Users\oshan\Desktop\new model 2 pp2\reports\model2_effnetv2b0\external_evaluation\phish_iris\phish_iris_manifest_with_cleaning_decisions.csv
+C:\Users\oshan\Desktop\new model 2 pp2\reports\model2_effnetv2b0\external_evaluation\phish_iris\phish_iris_clean_unique_manifest.csv
+C:\Users\oshan\Desktop\new model 2 pp2\reports\model2_effnetv2b0\external_evaluation\phish_iris\phish_iris_excluded_exact_duplicates.csv
+C:\Users\oshan\Desktop\new model 2 pp2\reports\model2_effnetv2b0\external_evaluation\phish_iris\phish_iris_clean_manifest_summary.txt
+
+IMPORTANT
+--------------------------------------------------------------------------------
+No screenshot was deleted or modified.
+No model training was performed.
+Phish360 overlap has not been checked yet.
+Do not run external model evaluation until overlap checking is complete.
+================================================================================

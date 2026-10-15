@@ -1,0 +1,54 @@
+================================================================================
+PHISH360 DATASET AUDIT SUMMARY
+================================================================================
+Audit time: 2026-08-15T06:48:28
+Dataset root: C:\Users\oshan\Desktop\Research project\datasets\dataset\phish360\Phish360
+
+SAMPLE COUNTS
+--------------------------------------------------------------------------------
+trainval   LEGITIMATE  : 4,917
+trainval   PHISHING    : 3,060
+trainval   UNKNOWN     : 0
+test       LEGITIMATE  : 1,499
+test       PHISHING    : 1,272
+test       UNKNOWN     : 0
+Total sample folders: 10,748
+
+IMAGE STATUS
+--------------------------------------------------------------------------------
+Valid screenshots: 10,734
+Missing screenshots: 0
+Corrupt screenshots: 14
+Low-variance warnings: 3
+
+EXACT DUPLICATES
+--------------------------------------------------------------------------------
+Exact duplicate groups: 8
+Images inside duplicate groups: 16
+Extra duplicate copies: 8
+Groups crossing trainval/test: 3
+Groups crossing phishing/legitimate labels: 0
+
+MOST COMMON IMAGE DIMENSIONS
+--------------------------------------------------------------------------------
+1280 x 960: 10,638
+1920 x 1080: 17
+1366 x 768: 3
+1327 x 827: 2
+997 x 758: 2
+935 x 668: 2
+977 x 659: 2
+1366 x 908: 1
+1366 x 1068: 1
+1389 x 832: 1
+
+REPORT FILES
+--------------------------------------------------------------------------------
+C:\Users\oshan\Desktop\new model 2 pp2\reports\phish360_dataset_audit.csv
+C:\Users\oshan\Desktop\new model 2 pp2\reports\phish360_exact_duplicate_groups.csv
+
+IMPORTANT
+--------------------------------------------------------------------------------
+No screenshots or original dataset files were deleted, moved, renamed or modified.
+Do not remove warning or duplicate samples until the reports have been reviewed.
+================================================================================

@@ -1,0 +1,38 @@
+================================================================================
+PHISH360 BALANCED GROUP-AWARE SPLIT SUMMARY
+================================================================================
+
+SETTINGS
+--------------------------------------------------------------------------------
+Random seed: 42
+Validation fraction: 20%
+Balanced target per class: 3,042
+Fixed test set rebalanced: NO
+
+FINAL SPLITS
+--------------------------------------------------------------------------------
+TRAIN       | LEGITIMATE: 2,434 | PHISHING: 2,434 | TOTAL: 4,868
+VALIDATION  | LEGITIMATE: 608 | PHISHING: 608 | TOTAL: 1,216
+TEST         | LEGITIMATE: 1,499 | PHISHING: 1,266 | TOTAL: 2,765
+UNUSED       | LEGITIMATE: 1,866 | PHISHING: 0 | TOTAL: 1,866
+
+LEAKAGE VERIFICATION
+--------------------------------------------------------------------------------
+Samples crossing train/validation: 0
+Duplicate groups crossing train/validation: 0
+Exact SHA-256 values crossing train/validation: 0
+Test samples modified or removed: 0
+
+REPORT FILES
+--------------------------------------------------------------------------------
+C:\Users\oshan\Desktop\new model 2 pp2\reports\balanced_split\phish360_balanced_split_manifest.csv
+C:\Users\oshan\Desktop\new model 2 pp2\reports\balanced_split\phish360_train_manifest.csv
+C:\Users\oshan\Desktop\new model 2 pp2\reports\balanced_split\phish360_validation_manifest.csv
+C:\Users\oshan\Desktop\new model 2 pp2\reports\balanced_split\phish360_test_manifest.csv
+C:\Users\oshan\Desktop\new model 2 pp2\reports\balanced_split\phish360_unused_trainval_manifest.csv
+C:\Users\oshan\Desktop\new model 2 pp2\reports\balanced_split\phish360_balanced_split_summary.txt
+
+IMPORTANT
+--------------------------------------------------------------------------------
+No original screenshots were deleted, moved, copied, renamed, resized or modified.
+================================================================================

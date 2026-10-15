@@ -1,0 +1,32 @@
+{
+  "stage": "stage1_frozen_backbone",
+  "backbone": "EfficientNetV2B0",
+  "input_width": 384,
+  "input_height": 224,
+  "batch_size": 16,
+  "maximum_epochs": 20,
+  "completed_epochs": 20,
+  "training_images": 4868,
+  "validation_images": 1216,
+  "fixed_test_images_used": 0,
+  "augmentation": {
+    "application": "on_the_fly_training_only",
+    "random_translation": "2_percent",
+    "random_zoom": "plus_or_minus_4_percent",
+    "random_contrast": "8_percent",
+    "horizontal_flip": false,
+    "rotation": false,
+    "validation_augmented": false,
+    "test_augmented": false,
+    "spotcheck": "C:\\Users\\oshan\\Desktop\\new model 2 pp2\\reports\\model2_effnetv2b0\\stage1\\stage1_augmentation_spotcheck.png"
+  },
+  "best_model": "C:\\Users\\oshan\\Desktop\\new model 2 pp2\\models\\model2_effnetv2b0\\stage1\\model2_effnetv2b0_stage1_best.keras",
+  "validation_metrics": {
+    "accuracy": 0.8807565569877625,
+    "auc_pr": 0.9401102066040039,
+    "auc_roc": 0.9455599784851074,
+    "loss": 0.3043193221092224,
+    "precision": 0.904013991355896,
+    "recall": 0.8519737124443054
+  }
+}

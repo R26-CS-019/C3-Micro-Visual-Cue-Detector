@@ -1,0 +1,18 @@
+{
+  "architecture": "MobileNetV3Large",
+  "seed": 20260826,
+  "input_shape": [
+    160,
+    384,
+    3
+  ],
+  "batch_size": 16,
+  "train_images": 1992,
+  "validation_images": 426,
+  "head_epochs": 15,
+  "finetune_epochs": 20,
+  "head_learning_rate": 0.001,
+  "finetune_learning_rate": 1e-05,
+  "test_data_used": false,
+  "tensorflow_version": "2.21.0"
+}

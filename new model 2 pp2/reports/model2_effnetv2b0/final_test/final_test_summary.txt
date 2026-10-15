@@ -1,0 +1,57 @@
+================================================================================
+MODEL 2 FINAL FIXED-TEST RESULTS
+================================================================================
+
+LOCKED CONFIGURATION
+--------------------------------------------------------------------------------
+Model: C:\Users\oshan\Desktop\new model 2 pp2\models\model2_effnetv2b0\stage2\model2_effnetv2b0_stage2_best.keras
+Threshold: 0.392
+Threshold selected using: validation only
+Threshold changed after test: NO
+Test images: 2,765
+Test LEGITIMATE: 1,499
+Test PHISHING: 1,266
+
+FINAL TEST METRICS
+--------------------------------------------------------------------------------
+Accuracy           : 0.913562
+Precision          : 0.868100
+Recall             : 0.956556
+Specificity        : 0.877252
+F1-score           : 0.910184
+Balanced accuracy   : 0.916904
+ROC-AUC            : 0.972636
+PR-AUC             : 0.970052
+False-positive rate: 0.122748
+False-negative rate: 0.043444
+Confusion matrix    : TN=1315, FP=184, FN=55, TP=1211
+
+TEST MINUS VALIDATION DIFFERENCE
+--------------------------------------------------------------------------------
+accuracy          : +0.813 percentage points
+precision         : -2.630 percentage points
+recall            : +3.715 percentage points
+f1_score          : +0.345 percentage points
+balanced_accuracy : +1.148 percentage points
+
+ERROR COUNTS
+--------------------------------------------------------------------------------
+False positives: 184
+False negatives: 55
+
+REPORT FILES
+--------------------------------------------------------------------------------
+C:\Users\oshan\Desktop\new model 2 pp2\reports\model2_effnetv2b0\final_test\final_test_predictions.csv
+C:\Users\oshan\Desktop\new model 2 pp2\reports\model2_effnetv2b0\final_test\final_test_false_positives.csv
+C:\Users\oshan\Desktop\new model 2 pp2\reports\model2_effnetv2b0\final_test\final_test_false_negatives.csv
+C:\Users\oshan\Desktop\new model 2 pp2\reports\model2_effnetv2b0\final_test\final_test_results.json
+C:\Users\oshan\Desktop\new model 2 pp2\reports\model2_effnetv2b0\final_test\final_test_summary.txt
+C:\Users\oshan\Desktop\new model 2 pp2\reports\model2_effnetv2b0\final_test\final_test_confusion_matrix.png
+C:\Users\oshan\Desktop\new model 2 pp2\reports\model2_effnetv2b0\final_test\final_test_roc_pr_curves.png
+
+IMPORTANT
+--------------------------------------------------------------------------------
+This was the one-time fixed-test evaluation.
+Do not tune the model or threshold using these test results.
+Use an independent external dataset for further development.
+================================================================================

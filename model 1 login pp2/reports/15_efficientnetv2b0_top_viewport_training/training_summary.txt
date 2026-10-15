@@ -1,0 +1,76 @@
+================================================================================
+EFFICIENTNETV2B0 TOP-VIEWPORT TRAINING COMPLETE
+================================================================================
+
+TensorFlow             : 2.21.0
+Architecture          : EfficientNetV2B0
+Pretrained weights    : ImageNet
+Input shape           : 160x384x3
+Built-in preprocessing: ENABLED (input pixels 0-255)
+Dataset                : C:\Users\oshan\Desktop\model 1 login pp2\data\prepared_login_uniform_top_viewport_384x160
+Manifest               : C:\Users\oshan\Desktop\model 1 login pp2\reports\13_uniform_top_viewport_dataset\complete_uniform_top_viewport_manifest.csv
+Manifest SHA256        : c83a0c78069b61d24c0362d79d253394fc425a5ed21dd48b1084625278381ab9
+
+DATA USAGE
+--------------------------------------------------------------------------------
+TRAIN images           : 1992
+VALIDATION images      : 426
+TEST images used      : 0
+TEST status           : DIAGNOSTIC ONLY - NOT LOADED INTO MODEL
+
+TRAINING
+--------------------------------------------------------------------------------
+Phase 1 epochs       : 15 (base frozen)
+Phase 2 epochs       : 20 (fine-tuning)
+Elapsed time          : 00:19:41
+Checkpoint monitor    : VALIDATION PR-AUC
+
+VALIDATION CHECKPOINT COMPARISON
+--------------------------------------------------------------------------------
+Phase 1 AP / PR-AUC : 0.885437
+Phase 1 ROC-AUC     : 0.878177
+Phase 1 log loss    : 0.465706
+Phase 2 AP / PR-AUC : 0.901832
+Phase 2 ROC-AUC     : 0.890762
+Phase 2 log loss    : 0.429106
+
+Selected checkpoint   : PHASE_2_FINETUNED
+Selected source       : C:\Users\oshan\Desktop\model 1 login pp2\models\model1_efficientnetv2b0_top_viewport\phase2_finetuned_best.keras
+Selected model        : C:\Users\oshan\Desktop\model 1 login pp2\models\model1_efficientnetv2b0_top_viewport\model1_efficientnetv2b0_selected_best.keras
+Selected model SHA256 : 6be68e8492246210f323b99a89fdc6107d7abfef30db7bb06820b5005497f1af
+
+VALIDATION-SELECTED DECISION THRESHOLD
+--------------------------------------------------------------------------------
+Primary objective     : Maximum MCC
+Selected threshold    : 0.4660
+Best-F1 threshold   : 0.4660
+Best-balanced thresh: 0.4660
+
+SELECTED-THRESHOLD VALIDATION RESULTS
+--------------------------------------------------------------------------------
+Accuracy              : 0.835681
+Balanced accuracy     : 0.835681
+Precision             : 0.886486
+Recall / sensitivity  : 0.769953
+Specificity           : 0.901408
+F1 score              : 0.824121
+MCC                   : 0.677239
+ROC-AUC               : 0.890762
+Average precision     : 0.901832
+
+VALIDATION CONFUSION MATRIX
+--------------------------------------------------------------------------------
+TN: 192
+FP: 21
+FN: 49
+TP: 164
+
+IMPORTANT
+--------------------------------------------------------------------------------
+These are VALIDATION results, not final TEST results.
+The selected threshold was chosen using VALIDATION only.
+The previous TEST split was not used by the model in this script.
+Do not change the threshold using diagnostic TEST results.
+The screenshot sources still have known collection differences.
+A separate external dataset is required for final evaluation.
+================================================================================

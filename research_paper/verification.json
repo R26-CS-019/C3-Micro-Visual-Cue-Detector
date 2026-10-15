@@ -1,0 +1,142 @@
+{
+  "checks": [
+    {
+      "check": "m2_test confusion-count metric consistency",
+      "passed": true,
+      "images": 2765,
+      "counts": [
+        1315,
+        184,
+        55,
+        1211
+      ]
+    },
+    {
+      "check": "m2_test archived prediction CSV agreement",
+      "passed": true,
+      "images": 2765
+    },
+    {
+      "check": "m2_external confusion-count metric consistency",
+      "passed": true,
+      "images": 2449,
+      "counts": [
+        1006,
+        364,
+        79,
+        1000
+      ]
+    },
+    {
+      "check": "m2_external archived prediction CSV agreement",
+      "passed": true,
+      "images": 2449
+    },
+    {
+      "check": "colour_layout_logistic confusion-count metric consistency",
+      "passed": true,
+      "images": 428,
+      "counts": [
+        108,
+        106,
+        38,
+        176
+      ]
+    },
+    {
+      "check": "dimensions_only_logistic confusion-count metric consistency",
+      "passed": true,
+      "images": 428,
+      "counts": [
+        214,
+        0,
+        0,
+        214
+      ]
+    },
+    {
+      "check": "cnn confusion-count metric consistency",
+      "passed": true,
+      "images": 428,
+      "counts": [
+        184,
+        30,
+        49,
+        165
+      ]
+    },
+    {
+      "check": "m1 selected checkpoint diagnostic confusion-count metric consistency",
+      "passed": true,
+      "images": 428,
+      "counts": [
+        185,
+        29,
+        52,
+        162
+      ]
+    },
+    {
+      "check": "same-brand exploratory confusion-count metric consistency",
+      "passed": true,
+      "images": 20,
+      "counts": [
+        4,
+        0,
+        7,
+        9
+      ]
+    },
+    {
+      "check": "DOCX XML, media, tables, sections and template guidance removal",
+      "passed": true
+    }
+  ],
+  "sources": {
+    "m1_training": {
+      "path": "model 1 login pp2/reports/15_efficientnetv2b0_top_viewport_training/training_configuration.json",
+      "sha256": "5d76530c43788a988c269ad742c5f02148fd9d1c73a5d476947b02a9e6c4f7b9"
+    },
+    "m1_selection": {
+      "path": "model 1 login pp2/reports/17_efficientnetv2b0_continued_finetuning/continuation_comparison.json",
+      "sha256": "025c1904212398c1b10d3b74949bf9530d7ab8bd0ee2bf7421b4a9617bac3ed1"
+    },
+    "m1_selected_test": {
+      "path": "model 1 login pp2/reports/18_efficientnetv2b0_diagnostic_test/diagnostic_test_metrics.json",
+      "sha256": "6fd8dae54b912fa7c0fa0b56b18f1bd50af3af4391c55f6eeea2a934c20136de"
+    },
+    "baseline": {
+      "path": "research_suite/results/baseline_20261011T084658Z_aa75e1/report.json",
+      "sha256": "c772948f23d450a38a3aa6c19557116fb12826613297a361fa5c9a8f9e23fe45"
+    },
+    "m2_test": {
+      "path": "new model 2 pp2/reports/model2_effnetv2b0/final_test/final_test_results.json",
+      "sha256": "afa0070f576ff7301ca0f9050f38678d673547d2d01572b7a7e0d529f0f77385"
+    },
+    "m2_external": {
+      "path": "new model 2 pp2/reports/model2_effnetv2b0/external_evaluation/phish_iris/evaluation/phish_iris_external_results.json",
+      "sha256": "c3101ce5180f53d2470ec6a58987450c80b5b7a5d92dfccb9c93442efa8f005c"
+    },
+    "same_brand": {
+      "path": "research_suite/results/same-brand_20261011T084659Z_ed55d1/report.json",
+      "sha256": "60825be30f3ebba9af69ea42b5460b5118720c779dd453593cc149bd5cda4369"
+    },
+    "masking": {
+      "path": "research_suite/results/masking_20261011T085645Z_43da93/report.json",
+      "sha256": "6bd54fcc39a47c703cf2ca24b8512107654c441a26a98cf35c26b91a0f74512f"
+    },
+    "verification": {
+      "path": "research_suite/verification.json",
+      "sha256": "fb3d11638177c2edfc3afac9417abd64d7ca3afc4c1d446063563823cd88e2bd"
+    },
+    "registry": {
+      "path": "research_suite/models.json",
+      "sha256": "38708ad50f4513576d20f592dd69fa98eedf8536cb8eb74d5c19df96e20dcb47"
+    }
+  },
+  "template": "C:\\Users\\oshan\\Downloads\\conference-template-a4.docx",
+  "template_sha256": "57e2125b0a04860e103fd634c2b5fd19a7ea571fa59ac577bd97afc73ad99482",
+  "paper_sha256": "951e821e1344c70969f096790bd4ee4f349244d972124154efbcacb3fe0f3eaa",
+  "visual_layout_rendered_in_word": false,
+  "note": "Existing evidence audited; models were not retrained or re-evaluated. DOCX uses supplied template styles and strict OOXML."
+}

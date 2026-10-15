@@ -1,0 +1,53 @@
+================================================================================
+EFFICIENTNETV2B0 DIAGNOSTIC TEST COMPLETE
+================================================================================
+
+Model                  : C:\Users\oshan\Desktop\model 1 login pp2\models\model1_efficientnetv2b0_top_viewport\model1_efficientnetv2b0_selected_best.keras
+Model SHA256           : 6be68e8492246210f323b99a89fdc6107d7abfef30db7bb06820b5005497f1af
+Manifest SHA256        : c83a0c78069b61d24c0362d79d253394fc425a5ed21dd48b1084625278381ab9
+Decision threshold     : 0.4660
+Threshold source       : VALIDATION ONLY
+Elapsed time           : 00:00:11
+
+DIAGNOSTIC TEST RESULTS
+--------------------------------------------------------------------------------
+Test images            : 428
+Accuracy               : 0.810748
+Balanced accuracy      : 0.810748
+Precision              : 0.848168
+Recall / sensitivity   : 0.757009
+Specificity            : 0.864486
+F1 score               : 0.800000
+MCC                    : 0.625116
+ROC-AUC                : 0.888899
+Average precision      : 0.904484
+Binary log loss        : 0.456672
+Brier score            : 0.137079
+False-positive rate    : 0.135514
+False-negative rate    : 0.242991
+Negative predictive val: 0.780591
+
+CONFUSION MATRIX
+--------------------------------------------------------------------------------
+TN: 185
+FP: 29
+FN: 52
+TP: 162
+
+TEST MINUS VALIDATION
+--------------------------------------------------------------------------------
+Accuracy difference    : -0.024933
+F1 difference          : -0.024121
+MCC difference         : -0.052122
+ROC-AUC difference     : -0.001864
+Average precision diff : +0.002652
+
+IMPORTANT
+--------------------------------------------------------------------------------
+These results are diagnostic, not final external results.
+The model was not trained or modified.
+The threshold was not tuned or changed using TEST.
+Do not use these TEST results for further tuning.
+A separate external dataset is required for final evaluation.
+No original or prepared screenshot was modified.
+================================================================================

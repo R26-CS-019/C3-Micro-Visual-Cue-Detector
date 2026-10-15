@@ -1,0 +1,23 @@
+{
+    "processing_action": "UNIFORM_DIRECT_RESIZE",
+    "target_width": 384,
+    "target_height": 160,
+    "colour_mode": "RGB",
+    "output_format": "PNG",
+    "interpolation": "LANCZOS",
+    "cropping": "NONE",
+    "original_dataset": "C:\\Users\\oshan\\Desktop\\new model 1 pp2\\dataset",
+    "source_manifest": "C:\\Users\\oshan\\Desktop\\model 1 login pp2\\reports\\05_dataset_split\\complete_split_manifest.csv",
+    "source_manifest_sha256": "670dc509b5991051682625570c6eef8e2bd23a141294ee0893c650f2f18f23b1",
+    "output_dataset": "C:\\Users\\oshan\\Desktop\\model 1 login pp2\\data\\prepared_login_uniform_384x160",
+    "total_images": 2846,
+    "class_counts": {
+        "NOT_MALICIOUS": 1423,
+        "MALICIOUS": 1423
+    },
+    "split_counts": {
+        "TRAIN": 1992,
+        "VALIDATION": 426,
+        "TEST": 428
+    }
+}

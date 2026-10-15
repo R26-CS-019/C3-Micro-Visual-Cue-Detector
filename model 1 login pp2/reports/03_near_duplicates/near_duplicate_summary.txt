@@ -1,0 +1,27 @@
+================================================================================
+MODEL 1 NEAR-DUPLICATE SUMMARY
+================================================================================
+
+Total valid images             : 2846
+Total pair comparisons         : 4,048,435
+pHash threshold                : 6
+dHash threshold                : 10
+
+Accepted near-duplicate pairs  : 0
+Same-class pairs               : 0
+Cross-class pairs              : 0
+
+Connected duplicate groups     : 0
+Cross-class groups             : 0
+Images inside groups           : 0
+Largest group size             : 0
+
+Pair comparison time           : 0.43 seconds
+
+IMPORTANT:
+Candidate pairs are not automatically deleted.
+Visual review is required before making decisions.
+
+No original screenshot was deleted, moved, resized,
+renamed, or modified.
+================================================================================

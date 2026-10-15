@@ -1,0 +1,9 @@
+{
+    "status": "COMPLETE",
+    "summary_path": "C:\\Users\\oshan\\Desktop\\model 1 login pp2\\reports\\18_efficientnetv2b0_diagnostic_test\\diagnostic_test_summary.txt",
+    "model_sha256": "6be68e8492246210f323b99a89fdc6107d7abfef30db7bb06820b5005497f1af",
+    "manifest_sha256": "c83a0c78069b61d24c0362d79d253394fc425a5ed21dd48b1084625278381ab9",
+    "decision_threshold": 0.466,
+    "threshold_tuned_on_test": false,
+    "external_dataset_required": true
+}

@@ -1,0 +1,24 @@
+{
+  "models": {
+    "1": {
+      "checkpoint": "model 1 login pp2/models/model1_efficientnetv2b0_top_viewport/model1_efficientnetv2b0_selected_best.keras",
+      "sha256": "6be68e8492246210f323b99a89fdc6107d7abfef30db7bb06820b5005497f1af",
+      "threshold": 0.466,
+      "width": 384,
+      "height": 160,
+      "preprocessing": "width_scale_top_crop_bottom_white_pad_lanczos",
+      "training_manifest": "model 1 login pp2/reports/13_uniform_top_viewport_dataset/complete_uniform_top_viewport_manifest.csv",
+      "selection_note": "Step 15 baseline retained by the predeclared validation-controlled continuation comparison. Aligned on 15 October 2026; threshold and preprocessing unchanged. Earlier continuation evidence remains historical."
+    },
+    "2": {
+      "checkpoint": "new model 2 pp2/models/model2_effnetv2b0/stage2/model2_effnetv2b0_stage2_best.keras",
+      "sha256": "466ef5861994427a15af742dd68cdc4685b1ee972b8e77dfcc071f88b63e742c",
+      "threshold": 0.392,
+      "width": 384,
+      "height": 224,
+      "preprocessing": "bilinear_aspect_fit_center_white_pad",
+      "training_manifest": "new model 2 pp2/reports/balanced_split/phish360_balanced_split_manifest.csv",
+      "selection_note": "Current deployed stage-2 checkpoint and validation-selected threshold."
+    }
+  }
+}
