@@ -3,7 +3,10 @@ from contextlib import asynccontextmanager
 from threading import Lock
 import sys
 
+import os
+
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware  # R26 hosting fix
 from pydantic import BaseModel
 
 
@@ -29,6 +32,7 @@ if str(SRC_DIR) not in sys.path:
 from visual_component import (
     load_models,
     analyze_url,
+    require_public_url,  # R26 hosting fix
 )
 
 
@@ -90,6 +94,15 @@ app = FastAPI(
     version="1.0",
 
     lifespan=lifespan,
+)
+
+
+# R26 hosting fix: let the group website call this API from the browser
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[o.strip() for o in os.environ.get("C3_ALLOWED_ORIGINS", "*").split(",") if o.strip()],
+    allow_methods=["GET", "POST"],
+    allow_headers=["Content-Type"],
 )
 
 
@@ -202,6 +215,11 @@ def predict(request: URLRequest):
 
     try:
 
+        try:
+            require_public_url(url)  # R26 hosting fix
+        except ValueError as error:
+            raise HTTPException(status_code=400, detail=str(error))
+
         with prediction_lock:
 
             result = analyze_url(
@@ -290,15 +308,13 @@ def predict(request: URLRequest):
 
 
     except Exception as error:
+        print(f"Visual component failed: {error!r}")  # R26 hosting fix
 
         raise HTTPException(
 
             status_code=500,
 
-            detail=(
-                "Visual component failed: "
-                f"{error}"
-            ),
+            detail="Visual component failed.",  # R26 hosting fix
         )
 
 

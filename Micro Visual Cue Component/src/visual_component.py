@@ -48,7 +48,7 @@ PREVIEW_DIR = (
 # Login-page phishing detector
 # ============================================================
 
-MODEL1_PATH = Path('C:/Users/oshan/Desktop/full  pp2 module/model 1 login pp2/models/model1_efficientnetv2b0_top_viewport/model1_efficientnetv2b0_selected_best.keras')
+MODEL1_PATH = PROJECT_ROOT.parent / "model 1 login pp2/models/model1_efficientnetv2b0_top_viewport/model1_efficientnetv2b0_selected_best.keras"  # R26 hosting fix
 
 MODEL1_THRESHOLD = 0.4660
 
@@ -797,9 +797,55 @@ def predict_model2(
 # CAPTURE WEBPAGE
 # ============================================================
 
+
+
+# ============================================================
+# PUBLIC-ADDRESS GUARD  (R26 hosting fix)
+# The hosted browser may only open public websites, never
+# private, local or cloud-internal addresses.
+# ============================================================
+
+import ipaddress
+import socket
+from urllib.parse import urlsplit
+
+
+def _is_public_url(url):
+    parts = urlsplit(url)
+    if parts.scheme in ("data", "blob", "about"):
+        return True
+    if parts.scheme not in ("http", "https") or not parts.hostname:
+        return False
+    try:
+        infos = socket.getaddrinfo(
+            parts.hostname, parts.port or (443 if parts.scheme == "https" else 80)
+        )
+    except (socket.gaierror, UnicodeError, ValueError):
+        return False
+    for info in infos:
+        address = ipaddress.ip_address(info[4][0])
+        mapped = getattr(address, "ipv4_mapped", None)
+        if not address.is_global or (mapped and not mapped.is_global):
+            return False
+    return True
+
+
+def _guard_route(route):
+    if _is_public_url(route.request.url):
+        route.continue_()
+    else:
+        route.abort()
+
+
+def require_public_url(url):
+    if not _is_public_url(url):
+        raise ValueError("Use a public http(s) website address.")
+
 def capture_webpage(
     url,
 ):
+
+    require_public_url(url)  # R26 hosting fix
 
     timestamp = datetime.now().strftime(
         "%Y%m%d_%H%M%S"
@@ -823,7 +869,7 @@ def capture_webpage(
     with sync_playwright() as p:
 
         browser = p.chromium.launch(
-            headless=False
+            headless=os.environ.get("C3_HEADLESS", "1") != "0",  # R26 hosting fix
         )
 
 
@@ -842,6 +888,8 @@ def capture_webpage(
             print("Opening webpage...")
 
 
+            page.route("**/*", _guard_route)  # R26 hosting fix
+
             page.goto(
                 url,
                 wait_until="domcontentloaded",
@@ -851,7 +899,7 @@ def capture_webpage(
 
             # Allow dynamic content to render
             page.wait_for_timeout(
-                3000
+                7000
             )
 
 
