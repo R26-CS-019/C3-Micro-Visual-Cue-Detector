@@ -55,34 +55,31 @@ def initialise():
     ENGINE = candidate
 
 
+WARNING_TEXT = {
+    "possible_access_block_or_verification": "A verification or access-block page may have been captured. Review the screenshot.",
+    "near_blank_capture": "The screenshot is almost blank. Check that the intended page loaded.",
+}
+
+
 def capture(url, folder):
-    """Use the component viewport with a longer render wait and invisible browser."""
-    from playwright.sync_api import sync_playwright
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)
-        try:
-            page = browser.new_page(viewport={"width": 1366, "height": 768})
-            response = page.goto(url, wait_until="domcontentloaded", timeout=30000)
-            page.wait_for_timeout(10000)
-            html = page.content()
-            (folder / "page.html").write_text(html, encoding="utf-8")
-            page.screenshot(path=str(folder / "screenshot.png"), full_page=False)
-            title = page.title()
-            status = response.status if response else None
-            text = page.locator("body").inner_text(timeout=5000) if page.locator("body").count() else ""
-            warnings = []
-            if status is not None and status >= 400:
-                warnings.append(f"The server returned HTTP {status}.")
-            clues = ("verify you are human", "checking your browser", "just a moment", "access denied", "verify you're human")
-            if any(clue in (title + " " + text[:2500]).lower() for clue in clues):
-                warnings.append("A verification or access-block page may have been captured. Review the screenshot.")
-            if len(text.strip()) < 30:
-                warnings.append("Very little visible text was captured. Check that the intended page loaded.")
-            return html, {"requested_url": url, "final_url": page.url, "title": title,
-                          "http_status": status, "viewport": [1366, 768], "headless": True,
-                          "wait_after_dom_ms": 10000, "warnings": warnings}
-        finally:
-            browser.close()
+    """Capture with the exact browser profile used by the hosted API (hosting_diagnostics).
+
+    Sharing one capture function keeps local and Azure screenshots comparable.
+    """
+    from hosting_diagnostics import capture_with_diagnostics, read_capture
+    COMPONENT.require_public_url(url)
+    html, screenshot, _ = capture_with_diagnostics(url, folder.parent, COMPONENT._guard_route, folder=folder)
+    record = read_capture(screenshot)
+    settings = record["settings"]
+    warnings = [WARNING_TEXT.get(w, f"The server returned HTTP {w[11:]}." if w.startswith("http_error_") else w)
+                for w in record["warnings"]]
+    return html, {"requested_url": url, "final_url": record.get("final_url"), "title": record.get("title", ""),
+                  "http_status": record.get("http_status"),
+                  "viewport": [settings["viewport"]["width"], settings["viewport"]["height"]],
+                  "headless": settings["headless"], "browser": f"{record.get('browser_channel_used')} {record.get('browser_version')}",
+                  "capture_profile": settings["profile"], "user_agent": record.get("user_agent"),
+                  "wait_after_dom_ms": settings["render_wait_ms"], "warnings": warnings,
+                  "valid_for_assessment": record["valid_for_assessment"]}
 
 
 def run_job(job_id):
@@ -122,7 +119,7 @@ def run_job(job_id):
                   "limitations": ["A model score is not a calibrated probability or proof of website authenticity.",
                                    "Grad-CAM shows model sensitivity; it does not prove the absence of brand memorisation.",
                                    "Routing uses rendered HTML and the submitted URL, as in the original component.",
-                                   "This interface uses headless Chromium; the terminal capture uses a visible browser. Websites may render differently."]}
+                                   "Capture uses the same browser profile as the hosted API; websites may still serve different content to different networks or regions."]}
         write_json(folder / "result.json", result)
         with (folder / "prediction.csv").open("w", newline="", encoding="utf-8-sig") as f:
             fields = ["id", "created_at", "url", "model_number", "prediction", "phishing_score", "threshold"]

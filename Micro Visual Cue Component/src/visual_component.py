@@ -844,6 +844,12 @@ def _guard_route(route):
 
 def require_public_url(url):
     if not _is_public_url(url):
+        parts = urlsplit(url)
+        if parts.scheme in ("http", "https") and parts.hostname:
+            try:
+                socket.getaddrinfo(parts.hostname, None)
+            except (socket.gaierror, UnicodeError, ValueError):
+                raise ValueError("The website address could not be found (DNS lookup failed).")
         raise ValueError("Use a public http(s) website address.")
 
 def capture_webpage(url):

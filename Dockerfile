@@ -7,12 +7,21 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     C3_HEADLESS=1
 
 ARG C3_BUILD_REVISION=unknown
-ENV C3_BUILD_REVISION=${C3_BUILD_REVISION} C3_CAPTURE_WAIT_MS=7000
+# Capture profile c3-capture-v2 (same as the local interface): full Chromium,
+# desktop Chrome identity, en-US, Asia/Colombo, 10-second render wait.
+ENV C3_BUILD_REVISION=${C3_BUILD_REVISION} \
+    C3_CAPTURE_WAIT_MS=10000 \
+    C3_BROWSER_CHANNEL=chromium \
+    C3_LOCALE=en-US \
+    C3_TIMEZONE=Asia/Colombo
 
 WORKDIR /app
 COPY requirements-lock.txt .
+# fonts-noto-core adds Sinhala, Tamil and other scripts so Sri Lankan pages
+# render with real glyphs, as they do on Windows.
 RUN pip install --no-cache-dir -r requirements-lock.txt \
     && python -m playwright install --with-deps chromium \
+    && apt-get install -y --no-install-recommends fonts-noto-core \
     && rm -rf /var/lib/apt/lists/*
 
 COPY . .

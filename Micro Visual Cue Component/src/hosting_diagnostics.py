@@ -32,14 +32,59 @@ def save_json(path, value):
     Path(path).write_text(json.dumps(value, indent=2, ensure_ascii=False), encoding='utf-8')
 
 
+# Capture profile shared by the hosted API and the local interface, so a URL is
+# photographed the same way on Azure and on the laptop. It matches the desktop
+# Chrome conditions of the local interface: full Chromium (new headless mode),
+# a standard desktop Chrome identity, English locale and Sri Lanka time zone.
+# Headless-shell builds announce "HeadlessChrome" and are refused or served
+# challenge pages by many large sites from cloud addresses; the CNN then
+# classified the challenge page instead of the website.
+CAPTURE_PROFILE_VERSION = 'c3-capture-v2'
+DESKTOP_UA = ('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+              '(KHTML, like Gecko) Chrome/{major}.0.0.0 Safari/537.36')
+
+
 def capture_settings():
-    wait = int(os.environ.get('C3_CAPTURE_WAIT_MS', '7000'))
+    wait = int(os.environ.get('C3_CAPTURE_WAIT_MS', '10000'))
     if not 1000 <= wait <= 30000:
         raise ValueError('C3_CAPTURE_WAIT_MS must be between 1000 and 30000')
-    return {'headless': os.environ.get('C3_HEADLESS', '1') != '0',
+    channel = os.environ.get('C3_BROWSER_CHANNEL', 'chromium').strip() or None
+    return {'profile': CAPTURE_PROFILE_VERSION,
+            'headless': os.environ.get('C3_HEADLESS', '1') != '0',
+            'browser_channel': channel,
+            'user_agent': os.environ.get('C3_USER_AGENT', 'desktop-chrome'),
+            'locale': os.environ.get('C3_LOCALE', 'en-US'),
+            'timezone_id': os.environ.get('C3_TIMEZONE', 'Asia/Colombo'),
             'viewport': {'width': 1366, 'height': 768}, 'device_scale_factor': 1,
             'wait_until': 'domcontentloaded', 'navigation_timeout_ms': 30000,
             'render_wait_ms': wait, 'full_page': False}
+
+
+def _launch_browser(playwright, settings):
+    """Launch full Chromium when available; fall back to the default build."""
+    options = {'headless': settings['headless'],
+               'args': ['--disable-blink-features=AutomationControlled']}
+    if settings['browser_channel']:
+        try:
+            return playwright.chromium.launch(channel=settings['browser_channel'], **options), settings['browser_channel']
+        except Exception:  # channel not installed on this machine
+            pass
+    return playwright.chromium.launch(**options), 'default'
+
+
+def _new_context(browser, settings):
+    options = {'viewport': settings['viewport'], 'device_scale_factor': settings['device_scale_factor']}
+    if settings['user_agent'] == 'desktop-chrome':
+        options['user_agent'] = DESKTOP_UA.format(major=browser.version.split('.')[0])
+    elif settings['user_agent'] and settings['user_agent'] != 'browser-default':
+        options['user_agent'] = settings['user_agent']
+    if settings['locale']:
+        language = settings['locale']
+        options['locale'] = language
+        options['extra_http_headers'] = {'Accept-Language': f"{language},{language.split('-')[0]};q=0.9"}
+    if settings['timezone_id']:
+        options['timezone_id'] = settings['timezone_id']
+    return browser.new_context(**options)
 
 
 def deployment_info():
@@ -95,8 +140,16 @@ def quality_warnings(title, text, status, screenshot):
     warnings = []
     if status is not None and status >= 400:
         warnings.append(f'http_error_{status}')
+    # Bot-protection and challenge pages seen from the hosted browser. Several
+    # return HTTP 200/202, so the status code alone does not reveal them.
     clues = ('access denied', 'verify you are human', 'checking your browser',
-             "verify you're human", 'just a moment', 'request blocked')
+             "verify you're human", 'just a moment', 'request blocked',
+             'request rejected', 'requested url was rejected', 'security checkpoint',
+             'failed to verify your browser', 'security challenge', 'captcha',
+             'are you a robot', 'not a robot', 'robot check', 'unusual traffic',
+             'pardon our interruption', 'attention required', 'bot verification',
+             'access to this page has been denied', 'click the button below to continue shopping',
+             'enable javascript and cookies to continue', 'upstream request failed')
     # Avoid triggering on a passing reference deep in a long article.
     probe = title.lower() + (' ' + text.lower() if len(text) < 1500 else '')
     if any(term in probe for term in clues):
@@ -109,21 +162,22 @@ def quality_warnings(title, text, status, screenshot):
     return warnings
 
 
-def capture_with_diagnostics(url, results_dir, guard_route):
+def capture_with_diagnostics(url, results_dir, guard_route, folder=None):
     from playwright.sync_api import sync_playwright
     settings = capture_settings()
-    folder = Path(results_dir) / 'runs' / uuid.uuid4().hex
-    folder.mkdir(parents=True)
+    folder = Path(folder) if folder else Path(results_dir) / 'runs' / uuid.uuid4().hex
+    folder.mkdir(parents=True, exist_ok=True)
     record = {'run_id': folder.name, 'captured_at_utc': datetime.now(timezone.utc).isoformat(),
               'requested_url': url, 'settings': settings, 'deployment': deployment_info(),
               'warnings': [], 'capture_completed': False, 'valid_for_assessment': False}
     screenshot = folder / 'screenshot.png'; html_path = folder / 'page.html'
     try:
         with sync_playwright() as p:
-            browser = p.chromium.launch(headless=settings['headless'])
+            browser, launched_channel = _launch_browser(p, settings)
             try:
                 record['browser_version'] = browser.version
-                page = browser.new_page(viewport=settings['viewport'], device_scale_factor=1)
+                record['browser_channel_used'] = launched_channel
+                page = _new_context(browser, settings).new_page()
                 page.route('**/*', guard_route)
                 response = page.goto(url, wait_until=settings['wait_until'], timeout=settings['navigation_timeout_ms'])
                 page.wait_for_timeout(settings['render_wait_ms'])
@@ -139,6 +193,7 @@ def capture_with_diagnostics(url, results_dir, guard_route):
                 record.update(final_url=page.url, title=title, http_status=status,
                               visible_text_length=len(text.strip()), image_load_state=image_state,
                               user_agent=page.evaluate('() => navigator.userAgent'),
+                              navigator_webdriver=page.evaluate('() => navigator.webdriver'),
                               document_ready_state=page.evaluate('() => document.readyState'),
                               screenshot_sha256=sha256(screenshot), html_sha256=sha256(html_path),
                               capture_completed=True, warnings=warnings,
