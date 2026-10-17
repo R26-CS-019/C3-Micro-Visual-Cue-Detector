@@ -20,6 +20,10 @@ from playwright.sync_api import sync_playwright
 
 from page_type_router import detect_page_type
 from checkpoint_loader import load_checkpoint
+from hosting_diagnostics import (
+    capture_with_diagnostics, read_capture, check_capture, attach_evidence,
+    verify_checkpoints, model_identity,
+)
 
 
 # ============================================================
@@ -92,6 +96,7 @@ for folder in [
 
 def load_models():
 
+    verify_checkpoints(MODEL1_PATH, MODEL2_PATH)
     print("=" * 80)
     print("LOADING VISUAL PHISHING MODELS")
     print("=" * 80)
@@ -841,104 +846,9 @@ def require_public_url(url):
     if not _is_public_url(url):
         raise ValueError("Use a public http(s) website address.")
 
-def capture_webpage(
-    url,
-):
-
-    require_public_url(url)  # R26 hosting fix
-
-    timestamp = datetime.now().strftime(
-        "%Y%m%d_%H%M%S"
-    )
-
-
-    screenshot_path = (
-        SCREENSHOT_DIR
-        /
-        f"webpage_{timestamp}.png"
-    )
-
-
-    html_path = (
-        HTML_DIR
-        /
-        f"webpage_{timestamp}.html"
-    )
-
-
-    with sync_playwright() as p:
-
-        browser = p.chromium.launch(
-            headless=os.environ.get("C3_HEADLESS", "1") != "0",  # R26 hosting fix
-        )
-
-
-        page = browser.new_page(
-
-            viewport={
-                "width": 1366,
-                "height": 768,
-            }
-        )
-
-
-        try:
-
-            print()
-            print("Opening webpage...")
-
-
-            page.route("**/*", _guard_route)  # R26 hosting fix
-
-            page.goto(
-                url,
-                wait_until="domcontentloaded",
-                timeout=30000,
-            )
-
-
-            # Allow dynamic content to render
-            page.wait_for_timeout(
-                7000
-            )
-
-
-            # =================================================
-            # HTML
-            # =================================================
-
-            html = page.content()
-
-
-            html_path.write_text(
-                html,
-                encoding="utf-8",
-                errors="ignore",
-            )
-
-
-            # =================================================
-            # SCREENSHOT
-            # =================================================
-
-            page.screenshot(
-                path=str(
-                    screenshot_path
-                ),
-                full_page=False,
-            )
-
-
-            return (
-                html,
-                screenshot_path,
-                html_path,
-            )
-
-
-        finally:
-
-            browser.close()
+def capture_webpage(url):
+    require_public_url(url)
+    return capture_with_diagnostics(url, RESULTS_DIR, _guard_route)
 
 
 # ============================================================
@@ -974,6 +884,8 @@ def analyze_url(
     ) = capture_webpage(
         url
     )
+    capture_record = read_capture(screenshot_path)
+    check_capture(capture_record)
 
 
     print(
@@ -1135,7 +1047,7 @@ def analyze_url(
     # RETURN FOR FUTURE API / GROUP FUSION
     # ========================================================
 
-    return {
+    result = {
 
         "component":
             "MICRO_VISUAL_CUE",
@@ -1186,6 +1098,12 @@ def analyze_url(
                 "prediction"
             ],
     }
+    number = 1 if result["model_used"] == "MODEL_1" else 2
+    prepare = preprocess_model1 if number == 1 else preprocess_model2
+    batch, action, preview = prepare(screenshot_path)
+    checkpoint = MODEL1_PATH if number == 1 else MODEL2_PATH
+    identity = model_identity(number, checkpoint, result["threshold"])
+    return attach_evidence(result, screenshot_path, batch[0], identity, capture_record)
 
 
 # ============================================================

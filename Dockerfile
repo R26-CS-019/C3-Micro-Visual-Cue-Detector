@@ -6,6 +6,9 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     PLAYWRIGHT_BROWSERS_PATH=/ms-playwright \
     C3_HEADLESS=1
 
+ARG C3_BUILD_REVISION=unknown
+ENV C3_BUILD_REVISION=${C3_BUILD_REVISION} C3_CAPTURE_WAIT_MS=7000
+
 WORKDIR /app
 COPY requirements-lock.txt .
 RUN pip install --no-cache-dir -r requirements-lock.txt \

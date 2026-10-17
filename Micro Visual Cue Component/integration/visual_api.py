@@ -5,7 +5,8 @@ import sys
 
 import os
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Header
+from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware  # R26 hosting fix
 from pydantic import BaseModel
 
@@ -35,6 +36,12 @@ from visual_component import (
     require_public_url,  # R26 hosting fix
 )
 
+
+from hosting_diagnostics import (
+    CaptureQualityError, CaptureNavigationError, deployment_info, evidence_file,
+    model_identity,
+)
+from visual_component import MODEL1_PATH, MODEL2_PATH, MODEL1_THRESHOLD, MODEL2_THRESHOLD, RESULTS_DIR
 
 # ============================================================
 # GLOBAL MODEL VARIABLES
@@ -121,30 +128,12 @@ class URLRequest(BaseModel):
 
 @app.get("/health")
 def health_check():
-
-    models_loaded = (
-        model1 is not None
-        and
-        model2 is not None
-    )
-
-    return {
-
-        "component":
-            "micro_visual_cue",
-
-        "status":
-            "online",
-
-        "model1_loaded":
-            model1 is not None,
-
-        "model2_loaded":
-            model2 is not None,
-
-        "ready":
-            models_loaded,
-    }
+    ready = model1 is not None and model2 is not None
+    return {"component": "micro_visual_cue", "status": "online", "ready": ready,
+            "model1_loaded": model1 is not None, "model2_loaded": model2 is not None,
+            "deployment": deployment_info(),
+            "models": {"1": model_identity(1, MODEL1_PATH, MODEL1_THRESHOLD),
+                       "2": model_identity(2, MODEL2_PATH, MODEL2_THRESHOLD)} if ready else {}}
 
 
 # ============================================================
@@ -297,10 +286,18 @@ def predict(request: URLRequest):
             "processed_url":
                 url,
 
+            "diagnostics": result["diagnostics"],
+            "run_id": result["run_id"],
             "status":
                 "success",
         }
 
+
+    except CaptureQualityError as error:
+        raise HTTPException(status_code=422, detail=error.public_detail)
+
+    except CaptureNavigationError as error:
+        raise HTTPException(status_code=502, detail=error.public_detail)
 
     except HTTPException:
 
@@ -342,3 +339,15 @@ def root():
         "documentation":
             "/docs",
     }
+
+@app.get("/evidence/{run_id}/{filename}", include_in_schema=False)
+def download_evidence(run_id: str, filename: str, x_evidence_token: str | None = Header(default=None)):
+    import secrets
+    expected = os.environ.get("C3_EVIDENCE_TOKEN", "")
+    if not expected or not x_evidence_token or not secrets.compare_digest(expected, x_evidence_token):
+        raise HTTPException(status_code=403, detail="Evidence access is disabled or not authorised.")
+    try:
+        path = evidence_file(RESULTS_DIR, run_id, filename)
+    except (ValueError, FileNotFoundError):
+        raise HTTPException(status_code=404, detail="Evidence not found on this replica.")
+    return FileResponse(path, filename=filename, headers={"Cache-Control": "no-store"})

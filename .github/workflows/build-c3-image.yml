@@ -27,4 +27,8 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/r26-cs-019/c3-micro-visual-cue-detector:latest
+          build-args: |
+            C3_BUILD_REVISION=${{ github.sha }}
+          tags: |
+            ghcr.io/r26-cs-019/c3-micro-visual-cue-detector:latest
+            ghcr.io/r26-cs-019/c3-micro-visual-cue-detector:${{ github.sha }}
