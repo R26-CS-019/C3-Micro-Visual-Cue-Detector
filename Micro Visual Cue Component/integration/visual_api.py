@@ -42,6 +42,7 @@ from hosting_diagnostics import (
     model_identity,
 )
 from visual_component import MODEL1_PATH, MODEL2_PATH, MODEL1_THRESHOLD, MODEL2_THRESHOLD, RESULTS_DIR
+from gradcam_evidence import attach_gradcam, capture_review_visual_evidence
 
 # ============================================================
 # GLOBAL MODEL VARIABLES
@@ -216,6 +217,8 @@ def predict(request: URLRequest):
                 model1,
                 model2,
             )
+            selected_model = model1 if result["model_used"] == "MODEL_1" else model2
+            result = attach_gradcam(result, selected_model, RESULTS_DIR)
 
 
         # ----------------------------------------------------
@@ -288,13 +291,17 @@ def predict(request: URLRequest):
 
             "diagnostics": result["diagnostics"],
             "run_id": result["run_id"],
+            "evidence": result["evidence"],
+            "visual_evidence": result["visual_evidence"],
             "status":
                 "success",
         }
 
 
     except CaptureQualityError as error:
-        raise HTTPException(status_code=422, detail=error.public_detail)
+        detail = dict(error.public_detail)
+        detail["visual_evidence"] = capture_review_visual_evidence(RESULTS_DIR, detail["run_id"])
+        raise HTTPException(status_code=422, detail=detail)
 
     except CaptureNavigationError as error:
         raise HTTPException(status_code=502, detail=error.public_detail)

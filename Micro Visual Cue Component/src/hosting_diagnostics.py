@@ -17,7 +17,9 @@ EXPECTED_HASHES = {
     1: '6be68e8492246210f323b99a89fdc6107d7abfef30db7bb06820b5005497f1af',
     2: '466ef5861994427a15af742dd68cdc4685b1ee972b8e77dfcc071f88b63e742c',
 }
-ALLOWED_FILES = {'screenshot.png', 'model_input.png', 'model_input_float.npy', 'capture.json', 'result.json'}
+ALLOWED_FILES = {'screenshot.png', 'model_input.png', 'model_input_float.npy', 'capture.json', 'result.json',
+                 'phishing_overlay.png', 'legitimate_overlay.png', 'phishing_heatmap.npy',
+                 'legitimate_heatmap.npy', 'explanation.json'}
 
 
 def sha256(path):
